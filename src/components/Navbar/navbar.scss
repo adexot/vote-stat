@@ -1,5 +1,10 @@
 .navbar {
     border-bottom: 1px solid #252525;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0 20px;
 
     li{
        display: inline-block;
@@ -7,7 +12,11 @@
        font-size: 0.75rem;
        margin-right: 50px;
        text-transform: uppercase;
-       padding: 10px 0;
+
+       a {
+           display: inline-block;
+           line-height: 50px;
+       }
     }
 
     .logo {

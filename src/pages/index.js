@@ -6,42 +6,44 @@ import './index.scss'
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-    <main className='flex-container'>
+    <main className='flex-container index-container'>
       <div className='left-column'>
-        <div className='sub'>
+        <div className='header'>
           42
-          <span className='dark'>days</span>
+          <span className='text-dark'>days</span>
         </div>
-        <div>
+        <div className='header'>
           10
-          <span className='dark'>hours</span>
+          <span className='text-dark'>hours</span>
         </div>
-        <div>
+        <div className='header'>
           11
-          <span className='dark'>mins</span>
+          <span className='text-dark'>mins</span>
         </div>
-        <div>
+        <div className='header'>
           16
-          <span className='dark'>secs</span>
+          <span className='text-dark'>secs</span>
         </div>
         <div className='election-date'>
-          <span>until Saturday,</span>
+          until Saturday,
           <br/>
-          <span>16 February, 2019.</span>
+          16 February, 2019.
         </div>
       </div>
       <div className='rightColumn'>
-        <h2>
+        <h2 className='header text-green'>
           Nigerian
           <br/>
           General Election
           <br/>
-          <span>16th, Feb 2019</span>
+          <span class='text-white'>16th, Feb 2019</span>
         </h2>
-        <p>
-          Follow the Nigerian general presidential election statistics here live.
+        <p className='text-grey'>
+          Follow the <strong className='text-white'>Nigerian general presidential election</strong> statistics here live.
+          <br />
           Get overviewof basic statistics about the electoral features of each state.
         </p>
+        <div className='grid'></div>
       </div>
     </main>
   </Layout>
