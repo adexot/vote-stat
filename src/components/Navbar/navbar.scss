@@ -1,0 +1,36 @@
+.navbar {
+    border-bottom: 1px solid #252525;
+
+    li{
+       display: inline-block;
+       list-style: none;
+       font-size: 0.75rem;
+       margin-right: 50px;
+       text-transform: uppercase;
+       padding: 10px 0;
+    }
+
+    .logo {
+        padding-right: 30px;
+    }
+
+    .info {
+        text-transform: capitalize;
+    }
+}
+
+.active {
+    color: green;
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 20px;
+        height: 3px;
+        background-color: green;
+        transform: translateX(-50%);
+    }
+}

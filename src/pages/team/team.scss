@@ -1,0 +1,40 @@
+.team {
+    max-width: 1260px;
+    margin: 0 auto;
+    padding-top: 50px;
+
+    &-intro {
+        width: 50%;
+        padding-right: 100px;
+
+        h1 {
+            font-size: 100px;
+            font-weight: normal;
+            color: #a5a5a5;
+        }
+    }
+
+    &-members {
+        width: 50%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+}
+
+.member {
+    &-box {
+        width: 40%;
+    }
+
+    &-image {
+        width: 100%;
+        height: 200px;
+        background-color: #fff;
+    }
+
+    &-name,
+    &-profession {
+        font-weight: normal;
+    }
+}
