@@ -43,7 +43,33 @@ const IndexPage = () => (
           <br />
           Get overviewof basic statistics about the electoral features of each state.
         </p>
-        <div className='grid'></div>
+        <div className='grid-container'>
+          <div className='grid-item-top-left'></div>
+          <div className='grid-item-grey'></div>
+          <div className='grid-item-top-right-bottom'></div>
+          <div className='grid-item-empty'></div>
+          <div className='grid-item-image-one'></div>
+          <div className='grid-item-image-two'></div>
+          <div className='grid-item-image-three'></div>
+          <div className='grid-item-image-four'></div>
+          <div className='grid-item-image-five'>
+            <p>
+              The incumbent President, Muhammadu Buhari won a re-election bid after winning the APC presidential primaries held on 29 September 2018.
+            </p>
+          </div>
+          <div className='grid-item-image-six'></div>
+          <div className='grid-item-image-seven'></div>
+          <div className='grid-item-image-eight'></div>
+          <div className='grid-item-image-nine'></div>
+          <div className='grid-item-image-ten'></div>
+          <div className='grid-item-image-eleven'></div>
+          <div className='grid-item-image-twelve'></div>
+          <div className='grid-item-image-thirteen'></div>
+          <div className='grid-item-image-14'></div>
+          <div className='grid-item-image-15'></div>
+          <div className='grid-item-image-16'></div>
+          <div className='grid-item-image-17'></div>
+        </div>
       </div>
     </main>
   </Layout>

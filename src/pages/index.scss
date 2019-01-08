@@ -13,12 +13,12 @@
 }
 
 .left-column {
-    width: 30%;
+    width: 25%;
     padding-top: 50px;
 }
 
 .right-column {
-    width: 70%;
+    width: 75%;
     height: 100%;
     padding-top: 50px;
     overflow: scroll;
@@ -58,6 +58,157 @@
 }
 
 .grid {
-    width: 100%;
-    height: 700px;
+    &-container {
+        width: 100%;
+        height: 1500px;
+        padding-bottom: 100px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 150px);
+        grid-template-rows: repeat(auto-fill, 150px);
+        grid-gap: 0;
+        margin-top: 70px;
+    }
+
+    &-item {
+        &-top-left{
+            border-left: 1px solid #23272B;
+            border-top: 1px solid #23272B;
+        }
+
+        &-top-right-bottom {
+            border-right: 1px solid #23272B;
+            border-top: 1px solid #23272B;
+            border-bottom: 1px solid #23272B;
+        }
+
+        &-right {
+            border-right: 1px solid #23272B;
+        }
+
+        &-grey {
+            background-color: #23272B;
+        }
+
+        &-green {
+            background-color: #55A300;
+            opacity: 0.09872581845238099;
+        }
+
+        &-image {
+            &-one {
+                grid-column-start: 5;
+                grid-column-end: 7;
+                grid-row-start: 1;
+                grid-row-end: 3;
+                background-color: #262626;
+            }
+
+            &-two {
+                background-color: #ccc;
+            }
+
+            &-three {
+                grid-column: 1/3;
+                grid-row-start: 2;
+                grid-row-end: 4;
+                background-color: #262626;
+            }
+
+            &-four {
+                grid-row-start: 3;
+                background-color: #ccc;
+            }
+
+            &-five {
+                background-color: #55A300;
+                grid-row-start: 2;
+                grid-row-end: 4;
+                padding: 40px 15px;
+
+                p {
+                    font-size: 0.8;
+                    line-height: 1.5;
+                }
+            }
+
+            &-six {
+                grid-column-start: 7;
+                grid-row-start: 3;
+                background-color: #23272B;
+            }
+
+            &-seven {
+                grid-column-start: 3;
+                grid-row-start: 4;
+                background-color: #55A300;
+                opacity: 0.09872581845238099;
+            }
+
+            &-eight {
+                grid-column-start: 5;
+                grid-row-start: 4;
+                background-color: #262626;
+            }
+
+            &-nine {
+                grid-column-start: 6;
+                grid-column-end: 8;
+                grid-row-start: 4;
+                grid-row-end: 6;
+                background-color: #dedede;
+            }
+
+            &-ten {
+                grid-row-start: 5;
+                background-color: #222;
+            }
+
+            &-eleven {
+                grid-row-start: 5;
+                grid-row-end: 7;
+                grid-column-start: 2;
+                grid-column-end: 4;
+                background-color: #262626;
+            }
+
+            &-twelve {
+                grid-row-start: 5;
+                background-color: #23272B;
+            }
+
+            &-thirteen {
+                grid-row-start: 6;
+                grid-column-start: 4;
+                background-color: #30373d;
+            }
+
+            &-14 {
+                 grid-row-start: 6;
+                 grid-row-end: 8;
+                 grid-column-start: 5;
+                 grid-column-end: 7;
+                 background-color: #cd8864;
+            }
+
+            &-15 {
+                grid-row-start: 7;
+                grid-column-start: 7;
+                background-color: #21221e;
+            }
+
+            &-16 {
+                grid-row-start: 7;
+                grid-column-start: 1;
+                background-color: #23272B;
+            }
+
+            &-17 {
+                grid-row-start: 7;
+                grid-column-start: 2;
+                background-color: #55A300;
+                opacity: 0.09872581845238099;
+            }
+        }
+
+    }
 }
