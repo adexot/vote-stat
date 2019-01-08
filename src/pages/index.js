@@ -30,7 +30,7 @@ const IndexPage = () => (
           16 February, 2019.
         </div>
       </div>
-      <div className='rightColumn'>
+      <div className='right-column'>
         <h2 className='header text-green'>
           Nigerian
           <br/>

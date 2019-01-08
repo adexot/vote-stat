@@ -1,10 +1,12 @@
 .navbar {
+    background-color: #17191C;
     border-bottom: 1px solid #252525;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     padding: 0 20px;
+    z-index: 999;
 
     li{
        display: inline-block;

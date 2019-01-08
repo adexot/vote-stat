@@ -5,10 +5,13 @@
 
 .statistics-container {
     padding-top: 50px;
+    width: 100vw;
+    height: 100vh;
 }
 
 .stats-column {
     width: 50%;
+    overflow: scroll;
 
     // FIXME: fixed this by undestanding the usecase of first-child and first-of-type
     thead tr:hover {
@@ -16,6 +19,8 @@
     }
 
     tr {
+        transition: all 0.3s ease-in;
+
         &:nth-child(even) {
             background-color: #1D2023;
         }
@@ -23,6 +28,7 @@
 
         &:hover {
             background-color: #465765;
+            box-shadow: 0 2px 6px 5px rgba(255, 255, 255, 0.05);
             cursor: pointer;
         }
     }
@@ -94,4 +100,18 @@
         color: #98A3A9;
     }
 
+}
+
+.progress-bar {
+    background-color: #30373D;
+    width: 100%;
+    height: 8px;
+    border-radius: 5px;
+}
+
+.indicator {
+    background-color: #417505;
+    border-radius: 5px;
+    height: 100%;
+    width: 0;
 }

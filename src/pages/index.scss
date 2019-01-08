@@ -7,15 +7,21 @@
 // end of global styles
 
 .index-container {
-    padding: 100px 20px;
+    padding: 50px 20px 0;
+    width: 100vw;
+    height: 100vh;
 }
 
 .left-column {
     width: 30%;
+    padding-top: 50px;
 }
 
 .right-column {
     width: 70%;
+    height: 100%;
+    padding-top: 50px;
+    overflow: scroll;
 }
 
 .header {
