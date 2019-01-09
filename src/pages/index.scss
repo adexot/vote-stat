@@ -58,10 +58,20 @@
     color: #fff;
 }
 
+.text-small {
+    font-size: 0.75rem;
+    line-height: 1.5;
+}
+
 .grid {
+
+    &-text-box {
+        padding: 15px;
+    }
+
     &-container {
         width: 100%;
-        height: 1500px;
+        height: 3300px;
         padding-bottom: 100px;
         display: grid;
         grid-template-columns: repeat(auto-fill, 150px);
@@ -125,11 +135,6 @@
                 grid-row-start: 2;
                 grid-row-end: 4;
                 padding: 40px 15px;
-
-                p {
-                    font-size: 0.8;
-                    line-height: 1.5;
-                }
             }
 
             &-six {
@@ -209,6 +214,232 @@
                 background-color: #55A300;
                 opacity: 0.09872581845238099;
             }
+
+            &-18 {
+                grid-row-start: 7;
+                grid-column-start: 3;
+                border-right: 1px solid #252525;
+            }
+
+            &-19 {
+                grid-row-start: 8;
+                grid-row-end: 10;
+                grid-column-start: 1;
+                grid-column-end: 3;
+                background-color: #cd8864;
+            }
+
+            &-20 {
+                background-color: #252525;
+                grid-row-start: 8;
+                grid-column-start: 3;
+            }
+
+            &-21 {
+                grid-row-start: 8;
+                grid-column-start: 6;
+                background-color: #23272B;
+            }
+
+            &-22 {
+                grid-row-start: 9;
+                grid-row-end: 11;
+                grid-column-start: 3;
+                grid-column-end: 5;
+                background-color: #55A300;
+            }
+
+            &-23 {
+                background-color: #252525;
+                grid-row-start: 9;
+                grid-column-start: 5;
+            }
+
+            &-24 {
+                grid-row-start: 9;
+                grid-row-end: 11;
+                grid-column-start: 6;
+                grid-column-end: 8;
+                background-color: #cd8864;
+            }
+
+            &-25 {
+                grid-row-start: 11;
+                grid-column-start: 1;
+                background-color: rgb(178, 189, 201);
+            }
+
+            &-26 {
+                grid-row-start: 11;
+                grid-row-end: 13;
+                grid-column-start: 2;
+                grid-column-end: 4;
+                background-color: #252525;
+            }
+
+            &-27 {
+                grid-row-start: 11;
+                grid-column-start: 5;
+                border-left: 1px solid #252525;
+                border-top: 1px solid #252525;
+            }
+
+            &-28 {
+                background-color: #23272B;
+                grid-row-start: 11;
+                grid-column-start: 6;
+            }
+
+            &-29 {
+                grid-row-start: 12;
+                grid-row-end: 14;
+                grid-column-start: 5;
+                grid-column-end: 7;
+                background-color: #cd8864;
+            }
+
+            &-30 {
+                background-color: #c35864;
+                grid-row-start: 12;
+                grid-column-start: 7;
+            }
+
+            &-31 {
+                background-color: #23272B;
+                grid-row-start: 13;
+                grid-column-start: 1;
+            }
+
+            &-32 {
+                background-color: #23272B;
+                grid-row-start: 13;
+                grid-column-start: 4;
+            }
+
+            &-33 {
+                grid-row-start: 14;
+                grid-row-end: 16;
+                grid-column-start: 1;
+                grid-column-end: 3;
+                background-color: #ccd;
+            }
+
+            &-34 {
+                background-color: #ccd;
+                grid-row-start: 14;
+                grid-column-start: 3;
+            }
+
+            &-35 {
+                grid-row-start: 14;
+                grid-column-start: 6;
+                background-color: #55A300;
+                opacity: 0.09872581845238099;
+            }
+
+            &-36 {
+                grid-row-start: 15;
+                grid-row-end: 19;
+                grid-column-start: 4;
+                background-color: #55A300;
+            }
+
+            &-37 {
+                grid-row-start: 15;
+                grid-row-end: 17;
+                grid-column-start: 5;
+                grid-column-end: 7;
+                background-color: #ccd;
+            }
+
+            &-38 {
+                background-color: #ccd;
+                grid-row-start: 15;
+                grid-column-start: 7;
+            }
+
+            &-39 {
+                background-color: #253725;
+                grid-row-start: 16;
+                grid-column-start: 2;
+            }
+
+            &-40 {
+                background-color: #c35864;
+                grid-row-start: 17;
+                grid-column-start: 1;
+            }
+
+            &-41 {
+                grid-row-start: 17;
+                grid-row-end: 19;
+                grid-column-start: 2;
+                grid-column-end: 4;
+                background-color: #c35864;
+            }
+
+            &-42 {
+                background-color: #253725;
+                grid-row-start: 17;
+                grid-column-start: 7;
+            }
+
+            &-43 {
+                background-color: #2177ae;
+                grid-row-start: 18;
+                grid-column-start: 5;
+            }
+
+            &-44 {
+                grid-row-start: 18;
+                grid-row-end: 20;
+                grid-column-start: 6;
+                grid-column-end: 8;
+                background-color: #2177ae;
+            }
+
+            &-45 {
+                grid-row-start: 19;
+                grid-column-start: 3;
+                background-color: #55A300;
+                opacity: 0.09872581845238099;
+            }
+
+            &-46 {
+                background-color: #55A300;
+                grid-row-start: 20;
+                grid-column-start: 2;
+            }
+
+            &-47 {
+                grid-row-start: 20;
+                grid-row-end: 22;
+                grid-column-start: 3;
+                grid-column-end: 5;
+                background-color: #2177ae;
+            }
+
+            &-48 {
+                background-color: #253725;
+                grid-row-start: 20;
+                grid-column-start: 5;
+            }
+
+            &-49 {
+                background-color: #2177ae;
+                grid-row-start: 21;
+                grid-column-start: 5;
+            }
+
+            &-50 {
+                border-right: 1px solid #252525;
+                border-bottom: 1px solid #252525;
+                grid-row-start: 20;
+                grid-column-start: 6;
+            }
+
+
+
         }
 
     }
