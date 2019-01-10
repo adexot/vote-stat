@@ -23,7 +23,7 @@ const Image = () => (
               ...GatsbyImageSharpFluid
             }
           }
-        }
+        },
       }
     `}
     render={data => <Img fluid={data.placeholderImage.childImageSharp.fluid} />}
