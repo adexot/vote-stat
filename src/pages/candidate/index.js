@@ -1,10 +1,10 @@
 import React from 'react'
+import { graphql, Link } from 'gatsby'
+import Img from 'gatsby-image'
 import './candidate.scss'
 
 import Layout from '../../components/layout'
 import SEO from '../../components/seo'
-import { graphql } from 'gatsby'
-import Img from 'gatsby-image'
 
 const candidatesList = [
     {
@@ -297,6 +297,8 @@ const Candidate = ({data}) => (
         <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
         <main className='flex-container candidate-container'>
             <div className='candidate-detail-column scrollable'>
+                <Link to='/#candidates-grid' className='close-section'>
+                close</Link>
                 <div>
                     All Progressive Congress (APC)
                 </div>

@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'gatsby'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import './index.scss'
@@ -43,8 +44,10 @@ const IndexPage = () => (
           <br />
           Get overviewof basic statistics about the electoral features of each state.
         </p>
-        <div className='grid-container'>
-          <div className='grid-item-top-left'></div>
+        <div className='grid-container' id='candidates-list'>
+          <div className='grid-item-top-left'>
+            <Link to='/candidate' className='candidate-link'></Link>
+          </div>
           <div className='grid-item-grey'></div>
           <div className='grid-item-top-right-bottom'></div>
           <div className='grid-item-empty'></div>
