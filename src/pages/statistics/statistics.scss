@@ -1,6 +1,14 @@
+@import '../../components/common';
+
 .flex-container {
     width: 100%;
     display: flex;
+    flex-direction: row;
+
+    @include mobile {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 .statistics-container {

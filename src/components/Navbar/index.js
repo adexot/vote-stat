@@ -27,8 +27,8 @@ class Navbar extends Component {
   render (){
     return (
       <nav className='navbar'>
-        <ul>
-          <li className='logo'>logo</li>
+        <Link to='/' className='logo'>logo</Link>
+        <ul className='navbar-list'>
           {pages.map(navItem => (
             <li className={navItem.link === this.pagePathName ? 'active' : ''}>
               <Link to={navItem.link}>{navItem.title}</Link>
@@ -36,6 +36,10 @@ class Navbar extends Component {
           ))}
           <li className='info'>This is not an official site. The information displayed are sourced from INEC & Wikipedia</li>
         </ul>
+        {/* FIXME: make this a button */}
+        <div className='mobile-menu'>
+            <span></span>
+        </div>
       </nav>
     );
   }

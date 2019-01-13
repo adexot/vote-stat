@@ -1,0 +1,13 @@
+@import '~breakpoint-sass/stylesheets/breakpoint';
+
+@mixin mobile {
+    @include breakpoint(0 600px) {
+        @content
+    }
+};
+
+@mixin tablet {
+    @include breakpoint(600px 1000px) {
+        @content
+    }
+};
