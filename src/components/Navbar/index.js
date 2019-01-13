@@ -21,7 +21,7 @@ const pages = [
 class Navbar extends Component {
   constructor(props) {
     super(props);
-    this.pagePathName = window.location.pathname;
+    this.pagePathName = window && window.location.pathname;
 
     this.state = {
       showMobileMenu: false
