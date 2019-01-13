@@ -3,11 +3,14 @@ import './statistics.scss'
 
 import Layout from '../../components/layout'
 import SEO from '../../components/seo'
+import { graphql } from 'gatsby'
+import Img from 'gatsby-image'
 
 const isEmptyArray = arr => Array.isArray(arr) && arr.length < 1;
 
 const candidatesList = [
     {
+        image: 'candidate1',
         candidate: {
             surname: 'Mohammed',
             firstname: 'Buhari'
@@ -292,7 +295,7 @@ const candidatesVote = [
     },
 ];
 
-const Statistics = () => (
+const Statistics = ({data}) => (
     <Layout >
         <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
         <main className='flex-container statistics-container'>
@@ -311,9 +314,11 @@ const Statistics = () => (
                         {!isEmptyArray(candidatesList) && candidatesList.map((item) => (
                             <tr>
                                 <td>
-
-                                    <span className='surname'>{item.candidate.surname}</span>
-                                    <span className='firstname'>{item.candidate.firstname}</span>
+                                    <Img fluid={data.candidate1.childImageSharp.fluid} className='candidate-thumbnail' />
+                                    <div className='inline-block'>
+                                        <span className='surname'>{item.candidate.surname}</span>
+                                        <span className='firstname'>{item.candidate.firstname}</span>
+                                    </div>
                                 </td>
                                 <td>
                                     <span className='surname'>{item.runningMate.firstname}</span>
@@ -387,6 +392,25 @@ const Statistics = () => (
             </div>
         </main>
     </Layout>
-)
+);
+
+export const query = graphql`
+  query {
+    candidate1: file(relativePath: { eq: "cd-0.png" }) {
+          childImageSharp {
+            fluid(maxWidth: 500) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        },
+    candidate2: file(relativePath: { eq: "cd-1.png" }) {
+          childImageSharp {
+            fluid(maxWidth: 300) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        },
+  }
+`
 
 export default Statistics

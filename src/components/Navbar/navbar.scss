@@ -11,13 +11,18 @@
     li{
        display: inline-block;
        list-style: none;
-       font-size: 0.75rem;
+       font-size: 0.7rem;
        margin-right: 50px;
        text-transform: uppercase;
+
+       &:last-child{
+           margin-right: 0;
+       }
 
        a {
            display: inline-block;
            line-height: 50px;
+           font-size: inherit;
        }
     }
 

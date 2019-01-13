@@ -18,7 +18,7 @@ const Layout = ({ children }) => (
     `}
     render={data => (
       <div className='dark-theme'>
-        <Navbar />
+        <Navbar/>
           {children}
       </div>
     )}
