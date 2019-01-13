@@ -37,7 +37,7 @@ const IndexPage = () => (
           <br />
           General Election
           <br />
-          <span class='text-white'>16th, Feb 2019</span>
+          <span className='text-white'>16th, Feb 2019</span>
         </h2>
         <p className='text-grey'>
           Follow the <strong className='text-white'>Nigerian general presidential election</strong> statistics here live.
