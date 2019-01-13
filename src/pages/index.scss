@@ -1,4 +1,4 @@
-@import '~breakpoint-sass/stylesheets/breakpoint';
+@import '../components/common';
 
 // global styles
 %font-weight-light {
@@ -13,18 +13,11 @@
     width: 100vw;
     height: 100vh;
     display: flex;
-}
 
-.left-column {
-    width: 25%;
-    padding-top: 50px;
-}
-
-.right-column {
-    width: 75%;
-    height: 100%;
-    padding-top: 50px;
-    overflow: scroll;
+    @include mobile {
+        height: 100%;
+        flex-direction: column;
+    }
 }
 
 .header {
@@ -35,7 +28,44 @@
     span {
         font-size: inherit;
     }
+
+    @include mobile {
+        font-size: 18px;
+        display: inline-block;
+    }
 }
+
+.left-column {
+    width: 25%;
+    padding-top: 50px;
+
+    @include mobile {
+        width: 100%;
+        padding-top: 10px;
+    }
+}
+
+.right-column {
+    width: 75%;
+    height: 100%;
+    padding-top: 50px;
+    overflow: scroll;
+
+    @include mobile {
+        padding-top: 10px;
+        width: 100%;
+    }
+
+    &-header {
+        @extend .header;
+
+        @include mobile {
+            font-size: 30px;
+        }
+    }
+}
+
+
 
 .text-dark {
     color: #30373d;
@@ -51,6 +81,10 @@
     margin-top: 20px;
     font-size: 20px;
     font-weight: 300;
+
+    @include mobile{
+        font-size: 14px;
+    }
 }
 
 .text-green {

@@ -32,7 +32,7 @@ const IndexPage = () => (
         </div>
       </div>
       <div className='right-column'>
-        <h2 className='header text-green'>
+        <h2 className='right-column-header text-green'>
           Nigerian
           <br />
           General Election

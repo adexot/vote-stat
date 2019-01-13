@@ -15,11 +15,31 @@
     padding-top: 50px;
     width: 100vw;
     height: 100vh;
+
+    @include mobile {
+        height: 100%;
+        flex-direction: row;
+        padding: 0;
+    }
 }
 
 .stats-column {
     width: 50%;
     overflow: scroll;
+
+    @include mobile {
+        width: 100%;
+
+        .show {
+            display: block;
+        }
+    }
+
+    thead {
+        @include mobile {
+            display: none;
+        }
+    }
 
     // FIXME: fixed this by undestanding the usecase of first-child and first-of-type
     thead tr:hover {
@@ -81,6 +101,11 @@
         background-color: #23272B;
         padding: 20px 50px;
         overflow: scroll;
+
+        @include mobile {
+            display: none;
+            width: 100%;
+        }
     }
 
     &-card {
@@ -139,4 +164,37 @@
     border-radius: 5px;
     height: 100%;
     width: 0;
+}
+
+.twitter-column {
+    width: 22%;
+    height: 100%;
+    background-color: #30373D;
+
+    @include mobile {
+        width: 100%;
+        height: 100vh;
+        display: none;
+
+        .show {
+            display: block;
+        }
+    }
+}
+
+.tabbed-nav {
+    display: none;
+
+    @include mobile {
+        display: flex;
+        padding-top: 30px;
+    }
+
+    li {
+        width: 50%;
+        text-align: center;
+        list-style: none;
+        font-size: 0.75rem;
+        padding: 10px 0;
+    }
 }

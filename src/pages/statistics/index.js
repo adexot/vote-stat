@@ -298,8 +298,12 @@ const candidatesVote = [
 const Statistics = ({data}) => (
     <Layout >
         <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+        <ul className='tabbed-nav'>
+            <li>STATISTICS</li>
+            <li>TWEETS</li>
+        </ul>
         <main className='flex-container statistics-container'>
-            <div className='stats-column'>
+            <div className='stats-column show'>
                 <table>
                     <thead>
                         <tr>
@@ -390,6 +394,7 @@ const Statistics = ({data}) => (
                     </tbody>
                 </table>
             </div>
+            <div className='twitter-column'></div>
         </main>
     </Layout>
 );
