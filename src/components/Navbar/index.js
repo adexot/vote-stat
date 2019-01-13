@@ -38,8 +38,10 @@ class Navbar extends Component {
     const mobileMenuClass = `navbar-list ${ showMobileMenu ? 'show': '' }`;
     let pagePathName = '';
     // This check is written to avoid Gatsby build failure
-    if(typeof window !== undefined){
+    try{
       pagePathName = window && window.location.pathname;
+    } catch (e) {
+      console.log('Gatsby Error: No reference to window on the server');
     }
 
     return (
