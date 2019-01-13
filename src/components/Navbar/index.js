@@ -21,7 +21,6 @@ const pages = [
 class Navbar extends Component {
   constructor(props) {
     super(props);
-    this.pagePathName = window && window.location.pathname;
 
     this.state = {
       showMobileMenu: false
@@ -37,13 +36,18 @@ class Navbar extends Component {
   render() {
     const { showMobileMenu } = this.state;
     const mobileMenuClass = `navbar-list ${ showMobileMenu ? 'show': '' }`;
+    const pagePathName = '';
+    // This check is written to avoid Gatsby build failure
+    if(typeof window !== undefined){
+      pagePathName = window && window.location.pathname;
+    }
 
     return (
       <nav className='navbar'>
         <Link to='/' className='logo'>logo</Link>
         <ul className={mobileMenuClass}>
           {pages.map((navItem, index) => (
-            <li key={index} className={navItem.link === this.pagePathName ? 'active' : ''}>
+            <li key={index} className={navItem.link === pagePathName ? 'active' : ''}>
               <Link to={navItem.link}>{navItem.title}</Link>
             </li>
           ))}
