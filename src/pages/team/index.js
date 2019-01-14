@@ -8,17 +8,17 @@ import SEO from '../../components/seo'
 const teamMembers = [
     {
         image: '',
-        name: 'Otuogbai Francis',
+        name: 'Francis Otuogbai',
         profession: 'UI:UX DESIGNER',
         description: 'Ea deserunt do eu laboris sit excepteur. Irure laborum ea proident enim dolore laborum aliqua aliquip laboris exercitation. Sunt ullamco cupidatat minim laboris. Fugiat est nulla nulla est quis nostrud. Tempor magna nostrud aliquip qui nisi occaecat adipisicing aute culpa ea.',
         linkedin: 'www.linkedin.com/in/francis-otuogbai',
     },
     {
         image: '',
-        name: 'Otuogbai Francis',
-        profession: 'UI:UX DESIGNER',
+        name: 'Adekunle Oseni',
+        profession: 'Frontend Engineer',
         description: 'Ea deserunt do eu laboris sit excepteur. Irure laborum ea proident enim dolore laborum aliqua aliquip laboris exercitation. Sunt ullamco cupidatat minim laboris. Fugiat est nulla nulla est quis nostrud. Tempor magna nostrud aliquip qui nisi occaecat adipisicing aute culpa ea.',
-        linkedin: 'www.linkedin.com/in/francis-otuogbai',
+        linkedin: 'www.linkedin.com/in/adekunle-oseni',
     }
 ];
 

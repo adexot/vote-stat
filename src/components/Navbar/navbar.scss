@@ -27,11 +27,10 @@
             left: 0;
             max-width: 100%;
             height: 100vh;
-            z-index: 9999; // highest on the page
+            z-index: 9999;
             background-color: #000;
             transform: translateX(100%);
             transition: transform .25s linear;
-            padding: 5px;
             cursor: pointer;
         }
 
@@ -45,6 +44,19 @@
             font-size: 0.7rem;
             margin-right: 50px;
             text-transform: uppercase;
+
+            &:first-child {
+                display: none;
+                @include mobile {
+                    display: flex;
+                    justify-content: space-between;
+                    color: #fff;
+                    align-items: center;
+                    margin: 0;
+                    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+                    padding: 5px 15px;
+                }
+            }
 
             &:last-child {
                 margin-right: 0;
@@ -61,6 +73,8 @@
                     font-weight: 400;
                     max-width: 220px;
                     line-height: 1.2;
+                    z-index: 99999;
+                    padding: 0 15px;
                 }
 
             }
@@ -111,13 +125,17 @@
 .mobile-menu {
     display: none;
 
-    // FIXME: design the mobile menu bar
     @include mobile {
         display: inline-block;
-        padding: 5px;
         border: 1px solid #aeaeaa;
         width: 25px;
         border-radius: 2px;
-
+        text-align: center;
     }
 }
+
+.close-icon {
+        color: #fff;
+        padding: 0;
+        transform: scale(1.5);
+;}

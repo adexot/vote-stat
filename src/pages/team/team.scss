@@ -20,6 +20,7 @@
 
     @include mobile {
         padding-top: 40px;
+        display: flex;
         flex-direction: column-reverse;
     }
 

@@ -36,7 +36,7 @@ class Navbar extends Component {
   render() {
     const { showMobileMenu } = this.state;
     const mobileMenuClass = `navbar-list ${ showMobileMenu ? 'show': '' }`;
-    let pagePathName = '';
+    let pagePathName = '/';
     // This check is written to avoid Gatsby build failure
     try{
       pagePathName = window && window.location.pathname;
@@ -48,6 +48,15 @@ class Navbar extends Component {
       <nav className='navbar'>
         <Link to='/' className='logo'>logo</Link>
         <ul className={mobileMenuClass}>
+          <li className='mobile-menu-header'>
+            <div>logo</div>
+            <button
+              className='close-icon'
+              onClick={() => this.toggleMobileNavMenu()}
+            >
+              &times;
+            </button>
+          </li>
           {pages.map((navItem, index) => (
             <li key={index} className={navItem.link === pagePathName ? 'active' : ''}>
               <Link to={navItem.link}>{navItem.title}</Link>
@@ -60,6 +69,8 @@ class Navbar extends Component {
           className='mobile-menu'
           onClick={() => this.toggleMobileNavMenu()}
         >
+          {/* FIXME: use svg icon here */}
+          &#9776;
         </div>
       </nav>
     );

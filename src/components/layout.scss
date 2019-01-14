@@ -635,6 +635,10 @@ pre tt:after {
   height: 100%;
 }
 
+.layout-container {
+  overflow-x: hidden;
+}
+
 .dark-theme {
   @extend %full-dimension;
 
