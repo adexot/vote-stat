@@ -17,6 +17,7 @@
     @include mobile {
         height: 100%;
         flex-direction: column;
+        padding: 0 20px;
     }
 }
 
@@ -30,7 +31,7 @@
     }
 
     @include mobile {
-        font-size: 18px;
+        font-size: 20px;
         display: inline-block;
     }
 }
@@ -60,8 +61,12 @@
         @extend .header;
 
         @include mobile {
-            font-size: 30px;
+            font-size: 35px;
         }
+    }
+
+    &>p {
+        font-weight: 300;
     }
 }
 
