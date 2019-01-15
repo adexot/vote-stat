@@ -29,8 +29,9 @@
 
     @include mobile {
         width: 100%;
+        display: none;
 
-        .show {
+        &.show {
             display: block;
         }
     }
@@ -51,6 +52,18 @@
 
         &:nth-child(even) {
             background-color: #1D2023;
+
+            @include mobile {
+                background-color: inherit;
+            }
+        }
+
+        &:nth-child(odd) {
+            background-color: inherit;
+
+            @include mobile {
+                background-color: #1D2023;
+            }
         }
 
 
@@ -66,11 +79,33 @@
         text-transform: uppercase;
         font-size: 0.8rem;
         font-weight: normal;
+        padding-left: 0;
+
+        &:last-child {
+            text-align: right;
+            padding-right: 30px;
+        }
     }
 
     td {
         font-size: 0.8em;
         padding: 0;
+
+        @include mobile {
+            &:nth-child(2),
+            &:nth-child(3) {
+                display: none;
+            }
+        }
+
+        &:last-child {
+            text-align: right;
+            padding-right: 30px;
+
+            @include mobile {
+                padding-right: 15px;
+            }
+        }
     }
 }
 
@@ -89,6 +124,11 @@
 .firstname {
     display: block;
     line-height: 1.1;
+
+    @include mobile {
+        display: inline-block;
+        margin-right: 5px;
+    }
 }
 
 .inline-block {
@@ -105,6 +145,11 @@
         @include mobile {
             display: none;
             width: 100%;
+            padding: 20px;
+
+            &.show {
+                 display: block;
+            }
         }
     }
 
@@ -133,6 +178,18 @@
 
     &-name {
         width: 40%;
+    }
+
+    &-vice-name{
+        display: none;
+
+        @include mobile {
+            display: block;
+            span {
+                font-size: 10px;
+                color: #73838E;
+            }
+        }
     }
 
     &-stat {
@@ -171,14 +228,14 @@
     height: 100%;
     background-color: #30373D;
 
+    &.show {
+        display: block;
+    }
+
     @include mobile {
         width: 100%;
         height: 100vh;
         display: none;
-
-        .show {
-            display: block;
-        }
     }
 }
 
@@ -196,5 +253,13 @@
         list-style: none;
         font-size: 0.75rem;
         padding: 10px 0;
+    }
+}
+
+.mobile-party {
+    display: none;
+    @include mobile {
+        display: block;
+        font-size: 10px;
     }
 }
