@@ -253,6 +253,23 @@
         list-style: none;
         font-size: 0.75rem;
         padding: 10px 0;
+        position: relative;
+    }
+
+    .active {
+        color: #417505;
+
+        &::before {
+            content: 0;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #417505;
+            display: inline-block;
+            width: 10px;
+            height: 2px;
+        }
     }
 }
 

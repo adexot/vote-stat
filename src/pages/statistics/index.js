@@ -318,8 +318,10 @@ class Statistics extends Component {
                 <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
                 <ul className='tabbed-nav'>
                     <li
+                        className={activeColumn === 'stats' ? 'active' : ''}
                         onClick={() => this.changePageContent('stats')}>STATISTICS</li>
                     <li
+                        className={activeColumn === 'twitter' ? 'active' : ''}
                         onClick={() => this.changePageContent('twitter')}>TWEETS</li>
                 </ul>
                 <main className='flex-container statistics-container'>
