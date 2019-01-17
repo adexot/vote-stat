@@ -299,7 +299,7 @@ const Candidate = ({data}) => (
             <div className='candidate-detail-column scrollable'>
                 <Link to='/#candidates-grid' className='close-section'>
                 close</Link>
-                <div>
+                <div className='candidate-party'>
                     All Progressive Congress (APC)
                 </div>
                 <h1 className='header candidate-name'>

@@ -9,7 +9,6 @@
 // end of global styles
 
 .index-container {
-    padding: 50px 20px 0;
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -38,7 +37,8 @@
 
 .left-column {
     width: 25%;
-    padding-top: 50px;
+    padding: 50px 0 0 20px;
+
 
     @include mobile {
         width: 100%;

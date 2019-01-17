@@ -1,9 +1,17 @@
+@import '../../components/common';
+
+
 .candidate {
     &-container {
         display: flex;
-        padding-top: 50px;
         width: 100vw;
         height: 100vh;
+
+        @include mobile {
+            flex-direction: column;
+            height: 100%;
+            padding: 20px;
+        }
     }
 
     &-detail-column {
@@ -11,6 +19,12 @@
         height: 100%;
         padding: 50px 0 0 100px;
         position: relative;
+
+        @include mobile {
+            width: 100%;
+            order: 2;
+            padding: 0;
+        }
     }
 
     &-image-column {
@@ -19,12 +33,23 @@
         background-color: #ccc;
         z-index: 1;
         position: relative;
+
+        @include mobile {
+            width: 100%;
+            order: 1;
+        }
     }
 
     &-vice-column {
         width: 25%;
         height: 100%;
         padding: 50px;
+
+        @include mobile {
+            width: 100%;
+            order: 3;
+            padding: 0;
+        }
     }
 
     &-name {
@@ -35,11 +60,25 @@
         white-space: nowrap;
         z-index: 999;
         position: relative;
+
+        @include mobile {
+            margin-top: 20px;
+        }
     }
 
     &-description {
         padding-right: 50px;
         margin-top: 30px;
+
+        @include mobile {
+            padding-right: 0;
+        }
+    }
+
+    &-party {
+        @include mobile {
+            display: none;
+        }
     }
 }
 
@@ -69,8 +108,12 @@
 }
 
 .close-section {
-    display: inline-block;
+    display: inline;
     position: absolute;
     top: 10px;
     left: 10px;
+
+    @include mobile {
+        display: none;
+    }
 }
