@@ -87,7 +87,7 @@
     font-size: 20px;
     font-weight: 300;
 
-    @include mobile{
+    @include mobile {
         font-size: 14px;
     }
 }
@@ -120,18 +120,31 @@
         grid-template-rows: repeat(auto-fill, 150px);
         grid-gap: 0;
         margin-top: 70px;
+
+        @include mobile {
+            grid-template-columns: repeat(auto-fill, 100px);
+            grid-template-rows: repeat(auto-fill, 100px);
+        }
     }
 
     &-item {
-        &-top-left{
+        &-top-left {
             border-left: 1px solid #23272B;
             border-top: 1px solid #23272B;
+
+            @include mobile {
+                display: none;
+            }
         }
 
         &-top-right-bottom {
             border-right: 1px solid #23272B;
             border-top: 1px solid #23272B;
             border-bottom: 1px solid #23272B;
+
+            @include mobile {
+                display: none;
+            }
         }
 
         &-right {
@@ -140,6 +153,10 @@
 
         &-grey {
             background-color: #23272B;
+
+            @include mobile {
+                display: none;
+            }
         }
 
         &-green {
@@ -154,10 +171,24 @@
                 grid-row-start: 1;
                 grid-row-end: 3;
                 background-color: #262626;
+
+                @include mobile {
+                    grid-column-start: 1;
+                    grid-column-end: 3;
+                    grid-row-start: 1;
+                    grid-row-end: 3;
+                }
             }
 
             &-two {
                 background-color: #ccc;
+
+                @include mobile {
+                    grid-column-start: 3;
+                    grid-column-end: 4;
+                    grid-row-start: 1;
+                    grid-row-end: 2;
+                }
             }
 
             &-three {
@@ -169,6 +200,9 @@
 
             &-four {
                 grid-row-start: 3;
+                grid-row-end: 4;
+                grid-column-start: 3;
+                grid-column-end: 4;
                 background-color: #ccc;
             }
 
@@ -177,12 +211,27 @@
                 grid-row-start: 2;
                 grid-row-end: 4;
                 padding: 40px 15px;
+
+                @include mobile {
+                    grid-row-start: 3;
+                    grid-row-end: 4;
+                    grid-column-start: 1;
+                    grid-column-end: 4;
+                    padding: 20px 15px 20px 40px;
+                }
             }
 
             &-six {
                 grid-column-start: 7;
                 grid-row-start: 3;
                 background-color: #23272B;
+
+                @include mobile {
+                    grid-row-start: 4;
+                    grid-row-end: 5;
+                    grid-column-start: 1;
+                    grid-column-end: 2;
+                }
             }
 
             &-seven {
@@ -190,6 +239,13 @@
                 grid-row-start: 4;
                 background-color: #55A300;
                 opacity: 0.09872581845238099;
+
+                @include mobile {
+                    grid-row-start: 7;
+                    grid-row-end: 8;
+                    grid-column-start: 1;
+                    grid-column-end: 2;
+                }
             }
 
             &-eight {
@@ -209,6 +265,13 @@
             &-ten {
                 grid-row-start: 5;
                 background-color: #222;
+
+                @include mobile {
+                    grid-row-start: 6;
+                    grid-row-end: 7;
+                    grid-column-start: 1;
+                    grid-column-end: 2;
+                }
             }
 
             &-eleven {
@@ -222,20 +285,28 @@
             &-twelve {
                 grid-row-start: 5;
                 background-color: #23272B;
+
+                @include mobile {
+                    display: none;
+                }
             }
 
             &-thirteen {
                 grid-row-start: 6;
                 grid-column-start: 4;
                 background-color: #30373d;
+
+                @include mobile {
+                    display: none;
+                }
             }
 
             &-14 {
-                 grid-row-start: 6;
-                 grid-row-end: 8;
-                 grid-column-start: 5;
-                 grid-column-end: 7;
-                 background-color: #cd8864;
+                grid-row-start: 6;
+                grid-row-end: 8;
+                grid-column-start: 5;
+                grid-column-end: 7;
+                background-color: #cd8864;
             }
 
             &-15 {
@@ -248,6 +319,10 @@
                 grid-row-start: 7;
                 grid-column-start: 1;
                 background-color: #23272B;
+
+                @include mobile {
+                    display: none;
+                }
             }
 
             &-17 {
@@ -255,12 +330,20 @@
                 grid-column-start: 2;
                 background-color: #55A300;
                 opacity: 0.09872581845238099;
+
+                @include mobile {
+                    display: none;
+                }
             }
 
             &-18 {
                 grid-row-start: 7;
                 grid-column-start: 3;
                 border-right: 1px solid #252525;
+
+                @include mobile {
+                    display: none;
+                }
             }
 
             &-19 {
@@ -281,6 +364,10 @@
                 grid-row-start: 8;
                 grid-column-start: 6;
                 background-color: #23272B;
+
+                @include mobile {
+                    display: none;
+                }
             }
 
             &-22 {
@@ -289,6 +376,10 @@
                 grid-column-start: 3;
                 grid-column-end: 5;
                 background-color: #55A300;
+
+                @include mobile {
+                    display: none;
+                }
             }
 
             &-23 {
@@ -324,12 +415,20 @@
                 grid-column-start: 5;
                 border-left: 1px solid #252525;
                 border-top: 1px solid #252525;
+
+                @include mobile {
+                    display: none;
+                }
             }
 
             &-28 {
                 background-color: #23272B;
                 grid-row-start: 11;
                 grid-column-start: 6;
+
+                @include mobile {
+                    display: none;
+                }
             }
 
             &-29 {
@@ -350,12 +449,20 @@
                 background-color: #23272B;
                 grid-row-start: 13;
                 grid-column-start: 1;
+
+                @include mobile {
+                    display: none;
+                }
             }
 
             &-32 {
                 background-color: #23272B;
                 grid-row-start: 13;
                 grid-column-start: 4;
+
+                @include mobile {
+                    display: none;
+                }
             }
 
             &-33 {
@@ -377,6 +484,10 @@
                 grid-column-start: 6;
                 background-color: #55A300;
                 opacity: 0.09872581845238099;
+
+                @include mobile {
+                    display: none;
+                }
             }
 
             &-36 {
@@ -384,6 +495,10 @@
                 grid-row-end: 19;
                 grid-column-start: 4;
                 background-color: #55A300;
+
+                @include mobile {
+                    display: none;
+                }
             }
 
             &-37 {
@@ -404,6 +519,10 @@
                 background-color: #253725;
                 grid-row-start: 16;
                 grid-column-start: 2;
+
+                @include mobile {
+                    display: none;
+                }
             }
 
             &-40 {
@@ -424,6 +543,10 @@
                 background-color: #253725;
                 grid-row-start: 17;
                 grid-column-start: 7;
+
+                @include mobile {
+                    display: none;
+                }
             }
 
             &-43 {
@@ -445,12 +568,20 @@
                 grid-column-start: 3;
                 background-color: #55A300;
                 opacity: 0.09872581845238099;
+
+                @include mobile {
+                    display: none;
+                }
             }
 
             &-46 {
                 background-color: #55A300;
                 grid-row-start: 20;
                 grid-column-start: 2;
+
+                @include mobile {
+                    display: none;
+                }
             }
 
             &-47 {
@@ -465,6 +596,10 @@
                 background-color: #253725;
                 grid-row-start: 20;
                 grid-column-start: 5;
+
+                @include mobile {
+                    display: none;
+                }
             }
 
             &-49 {
@@ -478,6 +613,10 @@
                 border-bottom: 1px solid #252525;
                 grid-row-start: 20;
                 grid-column-start: 6;
+
+                @include mobile {
+                    display: none;
+                }
             }
 
 
