@@ -6,21 +6,24 @@ import Layout from '../../components/layout'
 import SEO from '../../components/seo'
 
 const teamMembers = [
-    {
-        image: '',
-        name: 'Francis Otuogbai',
-        profession: 'UI:UX DESIGNER',
-        description: 'Ea deserunt do eu laboris sit excepteur. Irure laborum ea proident enim dolore laborum aliqua aliquip laboris exercitation. Sunt ullamco cupidatat minim laboris. Fugiat est nulla nulla est quis nostrud. Tempor magna nostrud aliquip qui nisi occaecat adipisicing aute culpa ea.',
-        linkedin: 'www.linkedin.com/in/francis-otuogbai',
-    },
-    {
-        image: '',
-        name: 'Adekunle Oseni',
-        profession: 'Frontend Engineer',
-        description: 'Ea deserunt do eu laboris sit excepteur. Irure laborum ea proident enim dolore laborum aliqua aliquip laboris exercitation. Sunt ullamco cupidatat minim laboris. Fugiat est nulla nulla est quis nostrud. Tempor magna nostrud aliquip qui nisi occaecat adipisicing aute culpa ea.',
-        linkedin: 'www.linkedin.com/in/adekunle-oseni',
-    }
-];
+  {
+    image:
+      'https://res.cloudinary.com/adexot/image/upload/v1547493774/Election2019/francis.png',
+    name: 'Francis Otuogbai',
+    profession: 'UI:UX DESIGNER',
+    description:
+      'Ea deserunt do eu laboris sit excepteur. Irure laborum ea proident enim dolore laborum aliqua aliquip laboris exercitation. Sunt ullamco cupidatat minim laboris. Fugiat est nulla nulla est quis nostrud. Tempor magna nostrud aliquip qui nisi occaecat adipisicing aute culpa ea.',
+    linkedin: 'www.linkedin.com/in/francis-otuogbai',
+  },
+  {
+    image: '',
+    name: 'Adekunle Oseni',
+    profession: 'Frontend Engineer',
+    description:
+      'Ea deserunt do eu laboris sit excepteur. Irure laborum ea proident enim dolore laborum aliqua aliquip laboris exercitation. Sunt ullamco cupidatat minim laboris. Fugiat est nulla nulla est quis nostrud. Tempor magna nostrud aliquip qui nisi occaecat adipisicing aute culpa ea.',
+    linkedin: 'www.linkedin.com/in/adekunle-oseni',
+  },
+]
 
 const Team = () => (
     <Layout >
@@ -37,7 +40,9 @@ const Team = () => (
                 {teamMembers.map(member => (
                     <div className='member-box'>
                         <div className='member-header'>
-                            <div className='member-image'></div>
+                            <div className='member-image'>
+                                <img src={member.image} alt=""/>
+                            </div>
                             <h3 className='member-name'>{member.name}</h3>
                         </div>
                         <h4 className='member-profession'>{member.profession}</h4>

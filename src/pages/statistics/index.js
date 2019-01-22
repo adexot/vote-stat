@@ -9,248 +9,249 @@ import Img from 'gatsby-image'
 const isEmptyArray = arr => Array.isArray(arr) && arr.length < 1;
 
 const candidatesList = [
-    {
-        image: 'candidate1',
-        candidate: {
-            surname: 'Mohammed',
-            firstname: 'Buhari'
-        },
-        runningMate: {
-            surname: 'Osibajo',
-            firstname: 'Yemi'
-        },
-        party: 'APC',
-        votes: '15,345,239'
+  {
+    image:
+      'https://res.cloudinary.com/adexot/image/upload/v1548090122/Election2019/cd-0.png',
+    candidate: {
+      surname: 'Mohammed',
+      firstname: 'Buhari',
     },
-    {
-        candidate: {
-            surname: 'Mohammed',
-            firstname: 'Buhari'
-        },
-        runningMate: {
-            surname: 'Osibajo',
-            firstname: 'Yemi'
-        },
-        party: 'APC',
-        votes: '15,345'
+    runningMate: {
+      surname: 'Osibajo',
+      firstname: 'Yemi',
     },
-    {
-        candidate: {
-            surname: 'Mohammed',
-            firstname: 'Buhari'
-        },
-        runningMate: {
-            surname: 'Osibajo',
-            firstname: 'Yemi'
-        },
-        party: 'APC',
-        votes: '15,345,239'
+    party: 'APC',
+    votes: '15,345,239',
+  },
+  {
+    candidate: {
+      surname: 'Mohammed',
+      firstname: 'Buhari',
     },
-    {
-        candidate: {
-            surname: 'Mohammed',
-            firstname: 'Buhari'
-        },
-        runningMate: {
-            surname: 'Osibajo',
-            firstname: 'Yemi'
-        },
-        party: 'APC',
-        votes: '15,345,239'
+    runningMate: {
+      surname: 'Osibajo',
+      firstname: 'Yemi',
     },
-    {
-        candidate: {
-            surname: 'Mohammed',
-            firstname: 'Buhari'
-        },
-        runningMate: {
-            surname: 'Osibajo',
-            firstname: 'Yemi'
-        },
-        party: 'APC',
-        votes: '345,239'
+    party: 'APC',
+    votes: '15,345',
+  },
+  {
+    candidate: {
+      surname: 'Mohammed',
+      firstname: 'Buhari',
     },
-    {
-        candidate: {
-            surname: 'Mohammed',
-            firstname: 'Buhari'
-        },
-        runningMate: {
-            surname: 'Osibajo',
-            firstname: 'Yemi'
-        },
-        party: 'APC',
-        votes: '15,345,239'
+    runningMate: {
+      surname: 'Osibajo',
+      firstname: 'Yemi',
     },
-    {
-        candidate: {
-            surname: 'Mohammed',
-            firstname: 'Buhari'
-        },
-        runningMate: {
-            surname: 'Osibajo',
-            firstname: 'Yemi'
-        },
-        party: 'APC',
-        votes: '15,345,239'
+    party: 'APC',
+    votes: '15,345,239',
+  },
+  {
+    candidate: {
+      surname: 'Mohammed',
+      firstname: 'Buhari',
     },
-    {
-        candidate: {
-            surname: 'Mohammed',
-            firstname: 'Buhari'
-        },
-        runningMate: {
-            surname: 'Osibajo',
-            firstname: 'Yemi'
-        },
-        party: 'APC',
-        votes: '15,345,239'
+    runningMate: {
+      surname: 'Osibajo',
+      firstname: 'Yemi',
     },
-    {
-        candidate: {
-            surname: 'Mohammed',
-            firstname: 'Buhari'
-        },
-        runningMate: {
-            surname: 'Osibajo',
-            firstname: 'Yemi'
-        },
-        party: 'APC',
-        votes: '15,345,239'
+    party: 'APC',
+    votes: '15,345,239',
+  },
+  {
+    candidate: {
+      surname: 'Mohammed',
+      firstname: 'Buhari',
     },
-    {
-        candidate: {
-            surname: 'Mohammed',
-            firstname: 'Buhari'
-        },
-        runningMate: {
-            surname: 'Osibajo',
-            firstname: 'Yemi'
-        },
-        party: 'APC',
-        votes: '15,345,239'
+    runningMate: {
+      surname: 'Osibajo',
+      firstname: 'Yemi',
     },
-    {
-        candidate: {
-            surname: 'Mohammed',
-            firstname: 'Buhari'
-        },
-        runningMate: {
-            surname: 'Osibajo',
-            firstname: 'Yemi'
-        },
-        party: 'APC',
-        votes: '15,345,239'
+    party: 'APC',
+    votes: '345,239',
+  },
+  {
+    candidate: {
+      surname: 'Mohammed',
+      firstname: 'Buhari',
     },
-    {
-        candidate: {
-            surname: 'Mohammed',
-            firstname: 'Buhari'
-        },
-        runningMate: {
-            surname: 'Osibajo',
-            firstname: 'Yemi'
-        },
-        party: 'APC',
-        votes: '15,345,239'
+    runningMate: {
+      surname: 'Osibajo',
+      firstname: 'Yemi',
     },
-    {
-        candidate: {
-            surname: 'Mohammed',
-            firstname: 'Buhari'
-        },
-        runningMate: {
-            surname: 'Osibajo',
-            firstname: 'Yemi'
-        },
-        party: 'APC',
-        votes: '15,345,239'
+    party: 'APC',
+    votes: '15,345,239',
+  },
+  {
+    candidate: {
+      surname: 'Mohammed',
+      firstname: 'Buhari',
     },
-    {
-        candidate: {
-            surname: 'Mohammed',
-            firstname: 'Buhari'
-        },
-        runningMate: {
-            surname: 'Osibajo',
-            firstname: 'Yemi'
-        },
-        party: 'APC',
-        votes: '15,345,239'
+    runningMate: {
+      surname: 'Osibajo',
+      firstname: 'Yemi',
     },
-    {
-        candidate: {
-            surname: 'Mohammed',
-            firstname: 'Buhari'
-        },
-        runningMate: {
-            surname: 'Osibajo',
-            firstname: 'Yemi'
-        },
-        party: 'APC',
-        votes: '15,345,239'
+    party: 'APC',
+    votes: '15,345,239',
+  },
+  {
+    candidate: {
+      surname: 'Mohammed',
+      firstname: 'Buhari',
     },
-    {
-        candidate: {
-            surname: 'Mohammed',
-            firstname: 'Buhari'
-        },
-        runningMate: {
-            surname: 'Osibajo',
-            firstname: 'Yemi'
-        },
-        party: 'APC',
-        votes: '15,345,239'
+    runningMate: {
+      surname: 'Osibajo',
+      firstname: 'Yemi',
     },
-    {
-        candidate: {
-            surname: 'Mohammed',
-            firstname: 'Buhari'
-        },
-        runningMate: {
-            surname: 'Osibajo',
-            firstname: 'Yemi'
-        },
-        party: 'APC',
-        votes: '15,345,239'
+    party: 'APC',
+    votes: '15,345,239',
+  },
+  {
+    candidate: {
+      surname: 'Mohammed',
+      firstname: 'Buhari',
     },
-    {
-        candidate: {
-            surname: 'Mohammed',
-            firstname: 'Buhari'
-        },
-        runningMate: {
-            surname: 'Osibajo',
-            firstname: 'Yemi'
-        },
-        party: 'APC',
-        votes: '15,345,239'
+    runningMate: {
+      surname: 'Osibajo',
+      firstname: 'Yemi',
     },
-    {
-        candidate: {
-            surname: 'Mohammed',
-            firstname: 'Buhari'
-        },
-        runningMate: {
-            surname: 'Osibajo',
-            firstname: 'Yemi'
-        },
-        party: 'APC',
-        votes: '5,000'
+    party: 'APC',
+    votes: '15,345,239',
+  },
+  {
+    candidate: {
+      surname: 'Mohammed',
+      firstname: 'Buhari',
     },
-    {
-        candidate: {
-            surname: 'Mohammed',
-            firstname: 'Buhari'
-        },
-        runningMate: {
-            surname: 'Osibajo',
-            firstname: 'Yemi'
-        },
-        party: 'APC',
-        votes: '15,345,239'
+    runningMate: {
+      surname: 'Osibajo',
+      firstname: 'Yemi',
     },
-];
+    party: 'APC',
+    votes: '15,345,239',
+  },
+  {
+    candidate: {
+      surname: 'Mohammed',
+      firstname: 'Buhari',
+    },
+    runningMate: {
+      surname: 'Osibajo',
+      firstname: 'Yemi',
+    },
+    party: 'APC',
+    votes: '15,345,239',
+  },
+  {
+    candidate: {
+      surname: 'Mohammed',
+      firstname: 'Buhari',
+    },
+    runningMate: {
+      surname: 'Osibajo',
+      firstname: 'Yemi',
+    },
+    party: 'APC',
+    votes: '15,345,239',
+  },
+  {
+    candidate: {
+      surname: 'Mohammed',
+      firstname: 'Buhari',
+    },
+    runningMate: {
+      surname: 'Osibajo',
+      firstname: 'Yemi',
+    },
+    party: 'APC',
+    votes: '15,345,239',
+  },
+  {
+    candidate: {
+      surname: 'Mohammed',
+      firstname: 'Buhari',
+    },
+    runningMate: {
+      surname: 'Osibajo',
+      firstname: 'Yemi',
+    },
+    party: 'APC',
+    votes: '15,345,239',
+  },
+  {
+    candidate: {
+      surname: 'Mohammed',
+      firstname: 'Buhari',
+    },
+    runningMate: {
+      surname: 'Osibajo',
+      firstname: 'Yemi',
+    },
+    party: 'APC',
+    votes: '15,345,239',
+  },
+  {
+    candidate: {
+      surname: 'Mohammed',
+      firstname: 'Buhari',
+    },
+    runningMate: {
+      surname: 'Osibajo',
+      firstname: 'Yemi',
+    },
+    party: 'APC',
+    votes: '15,345,239',
+  },
+  {
+    candidate: {
+      surname: 'Mohammed',
+      firstname: 'Buhari',
+    },
+    runningMate: {
+      surname: 'Osibajo',
+      firstname: 'Yemi',
+    },
+    party: 'APC',
+    votes: '15,345,239',
+  },
+  {
+    candidate: {
+      surname: 'Mohammed',
+      firstname: 'Buhari',
+    },
+    runningMate: {
+      surname: 'Osibajo',
+      firstname: 'Yemi',
+    },
+    party: 'APC',
+    votes: '15,345,239',
+  },
+  {
+    candidate: {
+      surname: 'Mohammed',
+      firstname: 'Buhari',
+    },
+    runningMate: {
+      surname: 'Osibajo',
+      firstname: 'Yemi',
+    },
+    party: 'APC',
+    votes: '5,000',
+  },
+  {
+    candidate: {
+      surname: 'Mohammed',
+      firstname: 'Buhari',
+    },
+    runningMate: {
+      surname: 'Osibajo',
+      firstname: 'Yemi',
+    },
+    party: 'APC',
+    votes: '15,345,239',
+  },
+]
 
 const candidatesVote = [
     {
@@ -339,9 +340,11 @@ class Statistics extends Component {
                                 {/* FIXME: abstract the logic for checking an empty array */}
                                 {!isEmptyArray(candidatesList) && candidatesList.map((item) => (
                                     <tr onClick={() => this.changePageContent('candidates')}>
-                                        <td>
-                                            {/* <Img fluid={data.candidate1.childImageSharp.fluid} className='candidate-thumbnail' /> */}
-                                            <div className='inline-block'>
+                                        <td className='cd-info'>
+                                            <img
+                                            src={item.image}
+                                            className='candidate-thumbnail' />
+                                            <div className='inline-block cd-name'>
                                                 <div className=''>
                                                     <span className='surname'>{item.candidate.surname}</span>
                                                     <span className='firstname'>{item.candidate.firstname}</span>
