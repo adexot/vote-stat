@@ -3,8 +3,6 @@ import './statistics.scss'
 
 import Layout from '../../components/layout'
 import SEO from '../../components/seo'
-import { graphql, StaticQuery } from 'gatsby'
-import Img from 'gatsby-image'
 
 const isEmptyArray = arr => Array.isArray(arr) && arr.length < 1;
 

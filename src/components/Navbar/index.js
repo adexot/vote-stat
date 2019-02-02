@@ -44,36 +44,38 @@ class Navbar extends Component {
       console.log('Gatsby Error: No reference to window on the server');
     }
 
-    return (
-      <nav className='navbar'>
-        <Link to='/' className='logo'>logo</Link>
+    return <nav className="navbar">
+        <Link to="/" className="logo">
+          <img src="https://res.cloudinary.com/adexot/image/upload/c_scale,w_40/v1549125892/Election2019/coat_of_arms.png" className="logo-image" alt="" />
+        </Link>
         <ul className={mobileMenuClass}>
-          <li className='mobile-menu-header'>
-            <div>logo</div>
-            <button
-              className='close-icon'
-              onClick={() => this.toggleMobileNavMenu()}
-            >
+          <li className="mobile-menu-header">
+            <div>
+              <img src="https://res.cloudinary.com/adexot/image/upload/c_scale,w_40/v1549125892/Election2019/coat_of_arms.png" className="logo-image" alt="" />
+            </div>
+            <button className="close-icon" onClick={() => this.toggleMobileNavMenu()}>
               &times;
             </button>
           </li>
           {pages.map((navItem, index) => (
-            <li key={index} className={navItem.link === pagePathName ? 'active' : ''}>
+            <li
+              key={index}
+              className={navItem.link === pagePathName ? 'active' : ''}
+            >
               <Link to={navItem.link}>{navItem.title}</Link>
             </li>
           ))}
-          <li className='info'>This is not an official site. The information displayed are sourced from INEC & Wikipedia</li>
+          <li className="info">
+            This is not an official site. The information displayed are
+            sourced from INEC & Wikipedia
+          </li>
         </ul>
         {/* FIXME: make this a button */}
-        <div
-          className='mobile-menu'
-          onClick={() => this.toggleMobileNavMenu()}
-        >
+        <div className="mobile-menu" onClick={() => this.toggleMobileNavMenu()}>
           {/* FIXME: use svg icon here */}
           &#9776;
         </div>
       </nav>
-    );
   }
 }
 

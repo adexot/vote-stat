@@ -91,6 +91,12 @@
         padding-right: 30px;
     }
 
+    .logo-name {
+        display: inline-block;
+        margin-bottom: 0;
+        vertical-align: middle;
+    }
+
     .info {
         text-transform: capitalize;
         color: #30373D;
@@ -139,4 +145,4 @@
         color: #fff;
         padding: 0;
         transform: scale(1.5);
-;}
+}
