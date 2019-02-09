@@ -6,9 +6,10 @@
 }
 
 // helper mixin
-@mixin gridRow($x, $y){
+@mixin gridRow($x, $y) {
     grid-row-start: $x;
-    if($y){
+
+    if($y) {
         grid-row-end: $y;
     }
 
@@ -30,6 +31,7 @@
         height: 100%;
         flex-direction: column;
         padding: 0 20px;
+        padding-top: 60px;
     }
 }
 
@@ -40,6 +42,11 @@
 
     span {
         font-size: inherit;
+
+        @include mobile {
+            padding-right: 10px;
+            font-size: 16px;
+        }
     }
 
     @include mobile {
@@ -56,6 +63,7 @@
     @include mobile {
         width: 100%;
         padding-top: 10px;
+        padding-left: 0;
     }
 }
 
@@ -266,9 +274,10 @@
                 grid-column-start: 5;
                 grid-row-start: 4;
                 background-color: #262626;
+
                 @include mobile {
-                display: none;
-            }
+                    display: none;
+                }
             }
 
             &-nine {
@@ -277,9 +286,10 @@
                 grid-row-start: 4;
                 grid-row-end: 6;
                 background-color: #dedede;
+
                 @include mobile {
-                display: none;
-            }
+                    display: none;
+                }
             }
 
             &-ten {
@@ -329,8 +339,8 @@
                 background-color: #cd8864;
 
                 @include mobile {
-                display: none;
-            }
+                    display: none;
+                }
             }
 
             &-15 {
@@ -339,8 +349,8 @@
                 background-color: #21221e;
 
                 @include mobile {
-                display: none;
-            }
+                    display: none;
+                }
             }
 
             &-16 {
@@ -414,9 +424,10 @@
                 background-color: #252525;
                 grid-row-start: 9;
                 grid-column-start: 5;
+
                 @include mobile {
-                display: none;
-            }
+                    display: none;
+                }
             }
 
             &-24 {
@@ -425,9 +436,10 @@
                 grid-column-start: 6;
                 grid-column-end: 8;
                 background-color: #cd8864;
+
                 @include mobile {
-                display: none;
-            }
+                    display: none;
+                }
             }
 
             &-25 {
@@ -473,8 +485,8 @@
                 background-color: #cd8864;
 
                 @include mobile {
-                display: none;
-            }
+                    display: none;
+                }
             }
 
             &-30 {
@@ -483,8 +495,8 @@
                 grid-column-start: 7;
 
                 @include mobile {
-                display: none;
-            }
+                    display: none;
+                }
             }
 
             &-31 {
@@ -549,18 +561,20 @@
                 grid-column-start: 5;
                 grid-column-end: 7;
                 background-color: #ccd;
+
                 @include mobile {
-                display: none;
-            }
+                    display: none;
+                }
             }
 
             &-38 {
                 background-color: #ccd;
                 grid-row-start: 15;
                 grid-column-start: 7;
+
                 @include mobile {
-                display: none;
-            }
+                    display: none;
+                }
             }
 
             &-39 {
@@ -601,9 +615,10 @@
                 background-color: #2177ae;
                 grid-row-start: 18;
                 grid-column-start: 5;
+
                 @include mobile {
-                display: none;
-            }
+                    display: none;
+                }
             }
 
             &-44 {
@@ -612,9 +627,10 @@
                 grid-column-start: 6;
                 grid-column-end: 8;
                 background-color: #2177ae;
+
                 @include mobile {
-                display: none;
-            }
+                    display: none;
+                }
             }
 
             &-45 {

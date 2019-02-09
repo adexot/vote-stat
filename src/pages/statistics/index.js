@@ -309,6 +309,17 @@ class Statistics extends Component {
         });
     }
 
+    componentDidMount(){
+      const tagBox = document.createElement('div');
+      tagBox.setAttribute('data-wall-id', 'first-wall-12407');
+      document.querySelector('.taggbox-container').appendChild(tagBox);
+      const script = document.createElement('script');
+      script.setAttribute('src', '//web.taggbox.com/app/js/embed.min.js');
+      script.setAttribute('defer', true);
+      document.body.appendChild(script);
+
+    }
+
     render() {
         const {activeColumn} = this.state;
 
@@ -372,7 +383,7 @@ class Statistics extends Component {
                         <div className='candidates-card'>
                             <div className='candidate-vote-info'>
                                 <div className='candidate-image'>
-                                    {/* TODO: add the circular image with progress-bar */}
+                      <img src="https://res.cloudinary.com/adexot/image/upload/v1548090122/Election2019/cd-0.png" alt=""/>
                                 </div>
                                 <div className='candidate-name'>
                                     <span className='surname'>Chike</span>
@@ -384,7 +395,9 @@ class Statistics extends Component {
                                 </div>
                             </div>
                             <div className='candidate-vote-info'>
-                                <div className='candidate-image'></div>
+                                <div className='candidate-image'>
+                      <img src="https://res.cloudinary.com/adexot/image/upload/v1548090122/Election2019/cd-0.png" alt="" />
+                                </div>
                                 <div className='candidate-name'>
                                     <span className='surname'>Chike</span>
                                     <span className='firstname'>Ukaegbu</span>
@@ -415,7 +428,7 @@ class Statistics extends Component {
                                                 <div
                                                     className='indicator'
                                                     style={{
-                                                        width: '50%'
+                                                        width: '100%'
                                                     }}
                                                 />
                                             </div>
@@ -426,7 +439,14 @@ class Statistics extends Component {
                             </tbody>
                         </table>
                     </div>
-                    <div className={`twitter-column ${activeColumn === 'twitter' ? 'show' : ''}`}></div>
+                    <div className={`twitter-column ${activeColumn === 'twitter' ? 'show' : ''}`}>
+                <div className="taggbox-container" style={{
+                  width: '100%',
+                  height: '100%',
+                  overflow: 'auto'
+                }}>
+                <div className="taggbox-socialwall" data-wall-id="first-wall-12407">  </div></div>
+                    </div>
                 </main>
             </Layout>
         );
