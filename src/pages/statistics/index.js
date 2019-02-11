@@ -357,7 +357,7 @@ class Statistics extends Component {
 
     this.fetchData();
 
-    setInterval(this.fetchData, 10000);
+    setInterval(() => this.fetchData(), 10000);
   }
 
   render() {

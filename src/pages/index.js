@@ -3,22 +3,48 @@ import { Link } from 'gatsby'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import './index.scss'
+import { parse } from 'querystring';
 
 class IndexPage extends Component {
   constructor(props){
     super(props)
+
+    const electionDate = (new Date('February 16, 2019 08:00:00')).getTime()
+    const currentDate = Date.now()
+    let timeDifference = electionDate - currentDate;
     this.state = {
       timer: {
-        days: 0,
-        hours: 0,
-        minutes: 0,
-        seconds: 0
+        days: parseInt(timeDifference / (1000 * 60 * 60 * 24)),
+        hours: parseInt((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 3600)),
+        minutes: parseInt((timeDifference % (1000 * 60 * 60)) / (1000 * 60)),
+        seconds: parseInt(timeDifference / (1000 * 60 * 60 * 24))
       }
     };
   }
 
   componentDidMount(){
-    
+    const electionDate = (new Date('February 16, 2019 08:00:00')).getTime()
+    const currentDate = Date.now()
+    let timeDifference = electionDate - currentDate;
+    let minutes = parseInt((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+
+    setInterval(()=>{
+      console.log(timeDifference);
+      this.setState({
+        timer: {
+          days: parseInt(timeDifference / (1000 * 60 * 60 * 24)),
+          hours: parseInt((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 3600)),
+          minutes: parseInt((timeDifference % (1000 * 60 * 60)) / (1000 * 60)),
+          seconds: parseInt(timeDifference / (1000 * 60 * 60 * 24))
+        }
+      })
+      timeDifference -= 1;
+      // Check if we're at zero.
+      if (timeDifference == 0) {
+        clearInterval();
+      }
+    }, 1000);
+
   }
 
   render() {
@@ -30,19 +56,19 @@ class IndexPage extends Component {
           <div className="left-column">
             <div className="header">
               {timer.days}
-              <span className="text-dark">days</span>
+              <span className="text-dark">day{timer.days > 1 && 's'}</span>
             </div>
             <div className="header">
               {timer.hours}
-              <span className="text-dark">hours</span>
+              <span className="text-dark">hour{timer.hours > 1 && 's'}</span>
             </div>
             <div className="header">
               {timer.minutes}
-              <span className="text-dark">mins</span>
+              <span className="text-dark">min{timer.minutes > 1 && 's'}</span>
             </div>
             <div className="header">
               {timer.seconds}
-              <span className="text-dark">secs</span>
+              <span className="text-dark">sec{timer.seconds > 1 && 's'}</span>
             </div>
             <div className="election-date">
               until Saturday,
