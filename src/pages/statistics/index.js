@@ -317,6 +317,7 @@ class Statistics extends Component {
   showCandidatesVotes(party) {
     this.setState({
       party: party,
+      activeColumn: 'candidates'
     })
   }
 
