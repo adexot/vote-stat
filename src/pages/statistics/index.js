@@ -468,6 +468,7 @@ class Statistics extends Component {
                     </div>
                     <div className="candidate-stat">
                       <span className="surname">{voteSum}</span>
+                      <br/>
                       <span className="firstname">{parseFloat(voteSum / overallVotes).toFixed(2)}</span>
                     </div>
                   </div>
@@ -481,6 +482,7 @@ class Statistics extends Component {
                     </div>
                     <div className="candidate-stat">
                       <span className="surname">53,537</span>
+                      <br/>
                       <span className="firstname">15.21%</span>
                     </div>
                   </div>
