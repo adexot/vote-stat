@@ -62,7 +62,9 @@ class Navbar extends Component {
               key={index}
               className={navItem.link === pagePathName ? 'active' : ''}
             >
-              <Link to={navItem.link}>{navItem.title}</Link>
+              <Link to={navItem.link}>
+                <span>{navItem.title}</span>
+              </Link>
             </li>
           ))}
           <li className="info">

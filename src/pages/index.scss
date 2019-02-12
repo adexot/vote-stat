@@ -50,7 +50,7 @@
     }
 
     @include mobile {
-        font-size: 20px;
+        font-size: 2rem;
         display: inline-block;
     }
 }
@@ -744,20 +744,26 @@
     position: fixed;
     top: 0;
     left: 0;
-    // right: 0;
-    // bottom: 0;
     background-color: rgba(0,0,0,1);
     color: #fff;
     z-index: 99999;
     overflow: auto;
     width: 100%;
     max-height: 100%;
+    transition: all .5s ease-in-out;
+    transform: scale(0);
+
+    &.show {
+        transform: scale(1);
+        transition: all .5s ease-in-out;
+    }
 }
 
 .modal-container {
     max-height: 100%;
     width: 100%;
     overflow-y: scroll;
+    padding: 20px 0 50px;
 }
 
 .close-modal-btn {
@@ -766,6 +772,8 @@
     right: 10px;
     color: #fff;
     cursor: pointer;
+    background-color: inherit;
+    border: 0;
 }
 
 .pointer {

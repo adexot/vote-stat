@@ -5,10 +5,12 @@ import Candidate from '../components/candidate'
 import './index.scss'
 import Countdown from 'react-countdown-now'
 
-const Modal = ({ children, closeModalFn }) => {
+const Modal = ({ children, closeModalFn, className }) => {
   return (
-    <div className="modal">
-      <button className='close-modal-btn' onClick={() => closeModalFn()}>close</button>
+    <div className={`modal ${className}`}>
+      <button className="close-modal-btn" onClick={() => closeModalFn()}>
+        close
+      </button>
       <div className="modal-container">{children}</div>
     </div>
   )
@@ -73,18 +75,18 @@ class IndexPage extends Component {
     )
   }
 
-  viewCandidate(party){
+  viewCandidate(party) {
     this.setState({
       modalVisible: true,
       party: party,
-    });
+    })
   }
 
-  closeModal(){
+  closeModal() {
     this.setState({
       modalVisible: false,
       party: '',
-    });
+    })
   }
 
   render() {
@@ -94,11 +96,16 @@ class IndexPage extends Component {
       <Layout>
         <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
         <main className="flex-container index-container">
-          {modalVisible && (
-            <Modal closeModalFn={() => this.closeModal()}>
-              <Candidate party={party}/>
-            </Modal>
-          )}
+          <Modal
+          className={modalVisible ? 'show' : ''}
+          closeModalFn={() => this.closeModal()}
+          >
+            {
+              modalVisible &&
+              <Candidate party={party} />
+            }
+
+          </Modal>
           <div className="left-column">
             {this.renderTimer()}
             <div className="election-date">
@@ -126,18 +133,23 @@ class IndexPage extends Component {
               each state.
             </p>
             <div className="grid-container" id="candidates-list">
-              <div className="grid-item-top-left">
-              </div>
+              <div className="grid-item-top-left" />
               <div className="grid-item-grey" />
               <div className="grid-item-top-right-bottom" />
               <div className="grid-item-empty" />
-              <div className="grid-item-image-one pointer" onClick={() =>  this.viewCandidate('apc')}>
+              <div
+                className="grid-item-image-one pointer"
+                onClick={() => this.viewCandidate('apc')}
+              >
                 {this.renderCandidateImage(1)}
               </div>
               <div className="grid-item-image-two">
                 {this.renderCandidateImage(1, true)}
               </div>
-              <div className="grid-item-image-three pointer" onClick={() => this.viewCandidate('pdp')}>
+              <div
+                className="grid-item-image-three pointer"
+                onClick={() => this.viewCandidate('pdp')}
+              >
                 {this.renderCandidateImage(2)}
               </div>
               <div className="grid-item-image-four">

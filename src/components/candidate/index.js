@@ -60,9 +60,9 @@ class Candidate extends Component {
     const { candidate, vice } = this.state
     const { party } = this.props
 
-    const partyCandidates = parties[party]
-    const candidateName = partyCandidates.president.split(' ')
-    const viceName = partyCandidates.vice.split(' ')
+    const partyCandidates = party && parties[party]
+    const candidateName = partyCandidates && partyCandidates.president.split(' ')
+    const viceName = partyCandidates && partyCandidates.vice.split(' ')
 
     return (
       <Fragment>
