@@ -24,7 +24,7 @@ module.exports = {
         background_color: `#23272B`,
         theme_color: `#23272B`,
         display: `minimal-ui`,
-        icon: `https://res.cloudinary.com/adexot/image/upload/c_scale,w_40/v1549125892/Election2019/coat_of_arms.png`,
+        icon: `public/icons/icon.png`,
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
