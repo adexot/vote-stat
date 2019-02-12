@@ -45,6 +45,7 @@
     // FIXME: fixed this by undestanding the usecase of first-child and first-of-type
     thead tr:hover {
         background-color: inherit;
+        box-shadow: none;
     }
 
     tr {
@@ -64,6 +65,11 @@
             @include mobile {
                 background-color: #1D2023;
             }
+        }
+
+        &.active {
+            background-color: #465765;
+            color: #fff;
         }
 
 

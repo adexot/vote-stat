@@ -70,7 +70,6 @@
                     display: block;
                     font-size: 30px;
                     font-weight: 400;
-                    max-width: 220px;
                     line-height: 1.2;
                     z-index: 99999;
                     padding: 0 15px;
@@ -98,7 +97,7 @@
 
     .info {
         text-transform: capitalize;
-        color: #30373D;
+        color: #465765;
 
         @include mobile {
             font-size: 16px;

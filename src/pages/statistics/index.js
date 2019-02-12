@@ -33,7 +33,7 @@ const candidatesList = [
       surname: 'Osibajo',
       firstname: 'Yemi',
     },
-    party: 'APC',
+    party: 'PDP',
     votes: '15,345',
   },
   {
@@ -45,7 +45,7 @@ const candidatesList = [
       surname: 'Osibajo',
       firstname: 'Yemi',
     },
-    party: 'APC',
+    party: 'NDP',
     votes: '15,345,239',
   },
   {
@@ -57,7 +57,7 @@ const candidatesList = [
       surname: 'Osibajo',
       firstname: 'Yemi',
     },
-    party: 'APC',
+    party: 'CCC',
     votes: '15,345,239',
   },
   {
@@ -69,7 +69,7 @@ const candidatesList = [
       surname: 'Osibajo',
       firstname: 'Yemi',
     },
-    party: 'APC',
+    party: 'ACG',
     votes: '345,239',
   },
   {
@@ -81,7 +81,7 @@ const candidatesList = [
       surname: 'Osibajo',
       firstname: 'Yemi',
     },
-    party: 'APC',
+    party: 'FGA',
     votes: '15,345,239',
   },
   {
@@ -93,7 +93,7 @@ const candidatesList = [
       surname: 'Osibajo',
       firstname: 'Yemi',
     },
-    party: 'APC',
+    party: 'GDH',
     votes: '15,345,239',
   },
   {
@@ -105,7 +105,7 @@ const candidatesList = [
       surname: 'Osibajo',
       firstname: 'Yemi',
     },
-    party: 'APC',
+    party: 'VCH',
     votes: '15,345,239',
   },
   {
@@ -117,7 +117,7 @@ const candidatesList = [
       surname: 'Osibajo',
       firstname: 'Yemi',
     },
-    party: 'APC',
+    party: 'YET',
     votes: '15,345,239',
   },
   {
@@ -129,7 +129,7 @@ const candidatesList = [
       surname: 'Osibajo',
       firstname: 'Yemi',
     },
-    party: 'APC',
+    party: 'SKJ',
     votes: '15,345,239',
   },
   {
@@ -319,6 +319,9 @@ class Statistics extends Component {
       party: party,
       activeColumn: 'candidates'
     })
+
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
   }
 
   fetchData(){
@@ -328,9 +331,10 @@ class Statistics extends Component {
       .get()
       .then(querySnapshot => {
         querySnapshot.forEach(doc => {
-          this.setState({
+          this.setState(prevState => ({
             data: doc.data(),
-          })
+            party: prevState.party || 'apc'
+          }))
         })
       })
       .catch(err => console.log(`ERROR => ${err}`));
@@ -354,16 +358,20 @@ class Statistics extends Component {
       })
     }
 
-    const db = firebase.firestore()
-
     this.fetchData();
 
     setInterval(() => this.fetchData(), 10000);
   }
 
+  renderCandidateImage(id) {
+    return (<img src={`https://res.cloudinary.com/adexot/image/upload/c_thumb,w_200,g_face/Election2019/c-${id}.png`} alt={`candidate=${id}-image`} className="candidate-thumbnail"/>);
+  }
+
   render() {
     const { activeColumn, data, party } = this.state
     const activeParty = party ? data[party] : null
+    const voteSum = party ? arrSum(activeParty.votes) : 0
+    const overallVotes = 64000000
 
     return (
       <Layout>
@@ -397,10 +405,10 @@ class Statistics extends Component {
               </thead>
               <tbody>
                 {!isEmptyArray(candidatesList) &&
-                  candidatesList.map(item => (
-                    <tr onClick={() => this.showCandidatesVotes('apc')}>
+                  candidatesList.map((item, index) => (
+                    <tr key={index} onClick={() => this.showCandidatesVotes(item.party.toLowerCase())} className={item.party.toLowerCase() === party ? 'active' : ''}>
                       <td className="cd-info">
-                        <img src={item.image} className="candidate-thumbnail" />
+                        {this.renderCandidateImage(index + 1)}
                         <div className="inline-block cd-name">
                           <div className="">
                             <span className="surname">
@@ -448,10 +456,7 @@ class Statistics extends Component {
                 <div className="candidates-card">
                   <div className="candidate-vote-info">
                     <div className="candidate-image">
-                      <img
-                        src="https://res.cloudinary.com/adexot/image/upload/v1548090122/Election2019/cd-0.png"
-                        alt=""
-                      />
+                      {this.renderCandidateImage(activeParty.id)}
                     </div>
                     <div className="candidate-name">
                       <span className="surname">
@@ -462,16 +467,13 @@ class Statistics extends Component {
                       </span>
                     </div>
                     <div className="candidate-stat">
-                      <span className="surname">53,537</span>
-                      <span className="firstname">15.21%</span>
+                      <span className="surname">{voteSum}</span>
+                      <span className="firstname">{parseFloat(voteSum / overallVotes).toFixed(2)}</span>
                     </div>
                   </div>
                   <div className="candidate-vote-info">
                     <div className="candidate-image">
-                      <img
-                        src="https://res.cloudinary.com/adexot/image/upload/v1548090122/Election2019/cd-0.png"
-                        alt=""
-                      />
+                      {this.renderCandidateImage(1)}
                     </div>
                     <div className="candidate-name">
                       <span className="surname">Chike</span>
@@ -497,7 +499,6 @@ class Statistics extends Component {
                     {!isEmptyArray(candidatesVote) &&
                       candidatesVote.map((item, index) => {
                         const voteCount = data[party].votes[index];
-                        const voteSum = party ? arrSum(activeParty.votes) : 0
                         const votePercent = Math.ceil((voteCount / voteSum) * 100) || 0;
                         return (<tr>
                           <td>{item.state}</td>
