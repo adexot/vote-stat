@@ -12,7 +12,7 @@ class IndexPage extends Component {
   }
 
   renderCandidateImage(id, vice){
-    return (<img src={`https://res.cloudinary.com/adexot/image/upload/Election2019/${vice ? 'v' : 'c'}-${id}.png`} alt={`candidate=${id}-image`} class="candidate-img" />);
+    return (<img src={`https://res.cloudinary.com/adexot/image/upload/Election2019/${vice ? 'v' : 'c'}-${id}.png`} alt={`candidate=${id}-image`} className="candidate-img" />);
   }
 
   displayTimer(timer){

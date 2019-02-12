@@ -19,7 +19,7 @@ class Candidate extends Component {
     const candidateInfo = {}
     let candidateResponse = null
 
-    await Wiki()
+    await Wiki({ apiUrl: 'https://en.wikipedia.org/w/api.php'})
       .page(candidate)
       .then(res => (candidateResponse = res))
       .then(() => candidateResponse.summary())
@@ -36,7 +36,6 @@ class Candidate extends Component {
   }
 
   componentDidMount() {
-    console.log('Finally mounted safely')
     this.getWikiData('Atiku Abubakar', 'candidate')
     this.getWikiData('Yemi Osinbajo', 'vice')
   }
