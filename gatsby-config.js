@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Election 2019`,
     description: `The coming Election in 2019 is coming soon...`,
-    author: `adexot09`,
+    author: `Oadex_09`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -18,13 +18,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
+        name: `Election 2019`,
         short_name: `starter`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#23272B`,
+        theme_color: `#23272B`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `https://res.cloudinary.com/adexot/image/upload/c_scale,w_40/v1549125892/Election2019/coat_of_arms.png`,
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
