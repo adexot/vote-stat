@@ -14,11 +14,12 @@
 
 .team {
     max-width: 1260px;
-    min-height: 100vh;
+    max-height: 100vh;
     margin: 0 auto;
     padding: 100px 0 50px;
 
     @include mobile {
+        max-height: none;
         padding-top: 50px;
         display: flex;
         flex-direction: column-reverse;
@@ -103,6 +104,7 @@
             font-size: 35px;
             padding-left: 10px;
             margin: 0;
+            max-width: 150px;
         }
     }
 

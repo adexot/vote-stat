@@ -143,9 +143,10 @@
         margin-top: 70px;
 
         @include mobile {
-            grid-template-columns: repeat(auto-fill, 100px);
+            grid-template-columns: repeat(auto-fill, 33.3%);
             grid-template-rows: repeat(auto-fill, 100px);
-            height: 2200px;
+            min-height: 2200px;
+            height: none;
         }
 
         p {
@@ -439,7 +440,12 @@
                 background-color: #55A300;
 
                 @include mobile {
-                    display: none;
+                    @include mobile {
+                        grid-row-start: 10;
+                        grid-row-end: 13;
+                        grid-column-start: 1;
+                        grid-column-end: 4;
+                    }
                 }
             }
 
@@ -461,7 +467,10 @@
                 background-color: #cd8864;
 
                 @include mobile {
-                    display: none;
+                    grid-row-start: 13;
+                    grid-row-end: 15;
+                    grid-column-start: 2;
+                    grid-column-end: 4;
                 }
             }
 
@@ -469,6 +478,13 @@
                 grid-row-start: 11;
                 grid-column-start: 1;
                 background-color: rgb(178, 189, 201);
+
+                @include mobile {
+                    grid-row-start: 15;
+                    grid-row-end: 16;
+                    grid-column-start: 3;
+                    grid-column-end: 4;
+                }
             }
 
             &-26 {
@@ -477,6 +493,13 @@
                 grid-column-start: 2;
                 grid-column-end: 4;
                 background-color: #252525;
+
+                @include mobile {
+                    grid-row-start: 15;
+                    grid-row-end: 17;
+                    grid-column-start: 1;
+                    grid-column-end: 3;
+                }
             }
 
             &-27 {
@@ -508,7 +531,10 @@
                 background-color: #cd8864;
 
                 @include mobile {
-                    display: none;
+                    grid-row-start: 17;
+                    grid-row-end: 19;
+                    grid-column-start: 2;
+                    grid-column-end: 4;
                 }
             }
 
@@ -548,12 +574,23 @@
                 grid-column-start: 1;
                 grid-column-end: 3;
                 background-color: #ccd;
+
+                @include mobile {
+                    grid-row-start: 19;
+                    grid-row-end: 21;
+                    grid-column-start: 1;
+                    grid-column-end: 3;
+                }
             }
 
             &-34 {
                 background-color: #ccd;
                 grid-row-start: 14;
                 grid-column-start: 3;
+
+                @include mobile {
+                    display: none;
+                }
             }
 
             &-35 {
@@ -574,7 +611,10 @@
                 background-color: #55A300;
 
                 @include mobile {
-                    display: none;
+                    grid-row-start: 21;
+                    grid-row-end: 23;
+                    grid-column-start: 1;
+                    grid-column-end: 4;
                 }
             }
 
@@ -586,7 +626,10 @@
                 background-color: #ccd;
 
                 @include mobile {
-                    display: none;
+                    grid-row-start: 23;
+                    grid-row-end: 25;
+                    grid-column-start: 1;
+                    grid-column-end: 3;
                 }
             }
 
@@ -622,6 +665,13 @@
                 grid-column-start: 2;
                 grid-column-end: 4;
                 background-color: #c35864;
+
+                @include mobile {
+                    grid-row-start: 25;
+                    grid-row-end: 27;
+                    grid-column-start: 2;
+                    grid-column-end: 4;
+                }
             }
 
             &-42 {
@@ -652,7 +702,10 @@
                 background-color: #2177ae;
 
                 @include mobile {
-                    display: none;
+                    grid-row-start: 27;
+                    grid-row-end: 29;
+                    grid-column-start: 1;
+                    grid-column-end: 3;
                 }
             }
 
@@ -673,7 +726,10 @@
                 grid-column-start: 2;
 
                 @include mobile {
-                    display: none;
+                    grid-row-start: 29;
+                    grid-row-end: 30;
+                    grid-column-start: 1;
+                    grid-column-end: 4;
                 }
             }
 
@@ -685,7 +741,10 @@
                 background-color: #2177ae;
 
                 @include mobile {
-                    @include gridColumn(1, 3);
+                    grid-row-start: 30;
+                    grid-row-end: 32;
+                    grid-column-start: 2;
+                    grid-column-end: 4;
                 }
             }
 
@@ -705,7 +764,7 @@
                 grid-column-start: 5;
 
                 @include mobile {
-                    @include gridColumn(3, 4);
+                    display: none;
                 }
             }
 

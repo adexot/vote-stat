@@ -7,10 +7,12 @@ const parties = {
   apc: {
     president: 'Muhammadu Buhari',
     vice: 'Yemi Osinbajo',
+    party: 'All Progressive Congress'
   },
   pdp: {
     president: 'Atiku Abubakar',
     vice: 'Peter Obi',
+    party: 'People\'s Democratic Party'
   },
 }
 
@@ -69,11 +71,11 @@ class Candidate extends Component {
         {candidate ? (
           <main className="flex-container candidate-container">
             <div className="candidate-detail-column scrollable">
-              <Link to="/#candidates-grid" className="close-section">
+              {/* <Link to="/#candidates-grid" className="close-section">
                 close
-              </Link>
+              </Link> */}
               <div className="candidate-party">
-                All Progressive Congress (APC)
+                {partyCandidates.party}
               </div>
               <h1 className="header candidate-name">
                 {candidateName[0]}
