@@ -1,22 +1,43 @@
 import React, { Component, Fragment } from 'react'
-import { Link } from 'gatsby'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
+import Candidate from '../components/candidate'
 import './index.scss'
-import { parse } from 'querystring';
 import Countdown from 'react-countdown-now'
 
+const Modal = ({ children, closeModalFn }) => {
+  return (
+    <div className="modal">
+      <button className='close-modal-btn' onClick={() => closeModalFn()}>close</button>
+      <div className="modal-container">{children}</div>
+    </div>
+  )
+}
+
 class IndexPage extends Component {
-  constructor(props){
+  constructor(props) {
     super(props)
+
+    this.state = {
+      modalVisible: false,
+      party: '',
+    }
   }
 
-  renderCandidateImage(id, vice){
-    return (<img src={`https://res.cloudinary.com/adexot/image/upload/Election2019/${vice ? 'v' : 'c'}-${id}.png`} alt={`candidate=${id}-image`} className="candidate-img" />);
+  renderCandidateImage(id, vice) {
+    return (
+      <img
+        src={`https://res.cloudinary.com/adexot/image/upload/Election2019/${
+          vice ? 'v' : 'c'
+        }-${id}.png`}
+        alt={`candidate=${id}`}
+        className="candidate-img"
+      />
+    )
   }
 
-  displayTimer(timer){
-    return(
+  displayTimer(timer) {
+    return (
       <Fragment>
         <div className="header">
           {timer.days}
@@ -35,26 +56,49 @@ class IndexPage extends Component {
           <span className="text-dark">sec{timer.seconds > 1 && 's'}</span>
         </div>
       </Fragment>
-    );
+    )
   }
 
-  renderTimer(){
-    const electionDate = (new Date('February 16, 2019 08:00:00')).getTime()
+  renderTimer() {
+    const electionDate = new Date('February 16, 2019 08:00:00').getTime()
     const currentDate = Date.now()
-    let timeDifference = electionDate - currentDate;
-    return <Countdown
-      date={Date.now() + timeDifference}
-      intervalDelay={1}
-      precision={3}
-      renderer={props => this.displayTimer(props)}
-    />
+    let timeDifference = electionDate - currentDate
+    return (
+      <Countdown
+        date={Date.now() + timeDifference}
+        intervalDelay={1}
+        precision={3}
+        renderer={props => this.displayTimer(props)}
+      />
+    )
+  }
+
+  viewCandidate(party){
+    this.setState({
+      modalVisible: true,
+      party: party,
+    });
+  }
+
+  closeModal(){
+    this.setState({
+      modalVisible: false,
+      party: '',
+    });
   }
 
   render() {
+    const { modalVisible, party } = this.state
+
     return (
       <Layout>
         <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
         <main className="flex-container index-container">
+          {modalVisible && (
+            <Modal closeModalFn={() => this.closeModal()}>
+              <Candidate party={party}/>
+            </Modal>
+          )}
           <div className="left-column">
             {this.renderTimer()}
             <div className="election-date">
@@ -83,18 +127,17 @@ class IndexPage extends Component {
             </p>
             <div className="grid-container" id="candidates-list">
               <div className="grid-item-top-left">
-                <Link to="/candidate" className="candidate-link" />
               </div>
               <div className="grid-item-grey" />
               <div className="grid-item-top-right-bottom" />
               <div className="grid-item-empty" />
-              <div className="grid-item-image-one">
+              <div className="grid-item-image-one pointer" onClick={() =>  this.viewCandidate('apc')}>
                 {this.renderCandidateImage(1)}
               </div>
               <div className="grid-item-image-two">
                 {this.renderCandidateImage(1, true)}
               </div>
-              <div className="grid-item-image-three">
+              <div className="grid-item-image-three pointer" onClick={() => this.viewCandidate('pdp')}>
                 {this.renderCandidateImage(2)}
               </div>
               <div className="grid-item-image-four">

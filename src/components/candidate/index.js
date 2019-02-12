@@ -3,15 +3,23 @@ import { Link } from 'gatsby'
 import './candidate.scss'
 import Wiki from 'wikijs'
 
-import Layout from '../../components/layout'
-import SEO from '../../components/seo'
+const parties = {
+  apc: {
+    president: 'Muhammadu Buhari',
+    vice: 'Yemi Osinbajo',
+  },
+  pdp: {
+    president: 'Atiku Abubakar',
+    vice: 'Peter Obi',
+  },
+}
 
 class Candidate extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      candidate: null,
-      vice: null,
+      candidate: '',
+      vice: '',
     }
   }
 
@@ -19,7 +27,7 @@ class Candidate extends Component {
     const candidateInfo = {}
     let candidateResponse = null
 
-    await Wiki({ apiUrl: 'https://en.wikipedia.org/w/api.php'})
+    await Wiki({ apiUrl: 'https://en.wikipedia.org/w/api.php' })
       .page(candidate)
       .then(res => (candidateResponse = res))
       .then(() => candidateResponse.summary())
@@ -27,7 +35,6 @@ class Candidate extends Component {
       .then(() => candidateResponse.mainImage())
       .then(res => (candidateInfo.image = res))
       .then(() => {
-        console.log(candidateInfo)
         this.setState({
           [state]: candidateInfo,
         })
@@ -36,16 +43,29 @@ class Candidate extends Component {
   }
 
   componentDidMount() {
-    this.getWikiData('Atiku Abubakar', 'candidate')
-    this.getWikiData('Yemi Osinbajo', 'vice')
+    const { party } = this.props
+    const partyCandidates = parties[party]
+    if (partyCandidates) {
+      this.getWikiData(partyCandidates.president, 'candidate')
+      this.getWikiData(partyCandidates.vice, 'vice')
+
+      this.setState({
+        candidate: partyCandidates.president,
+        vice: partyCandidates.vice,
+      })
+    }
   }
 
   render() {
     const { candidate, vice } = this.state
+    const { party } = this.props
+
+    const partyCandidates = parties[party]
+    const candidateName = partyCandidates.president.split(' ')
+    const viceName = partyCandidates.vice.split(' ')
 
     return (
-      <Layout>
-        <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+      <Fragment>
         {candidate ? (
           <main className="flex-container candidate-container">
             <div className="candidate-detail-column scrollable">
@@ -56,9 +76,9 @@ class Candidate extends Component {
                 All Progressive Congress (APC)
               </div>
               <h1 className="header candidate-name">
-                Muhammed
+                {candidateName[0]}
                 <br />
-                Buhari
+                {candidateName[1]}
               </h1>
               <div>&mdash; PRESIDENTIAL CANDIDATE</div>
               <div
@@ -75,7 +95,11 @@ class Candidate extends Component {
                   <div className="vice-image">
                     <img src={vice.image} className="full-image" />
                   </div>
-                  <h3 className="vice-name">Olayemi Osibanjo</h3>
+                  <h3 className="vice-name">
+                    {viceName[0]}
+                    <br />
+                    {viceName[1]}
+                  </h3>
                   <div>&mdash; VICE-PRESIDENTIAL CANDIDATE</div>
                   <div
                     className="vice-description"
@@ -90,7 +114,7 @@ class Candidate extends Component {
             <h1>Loading candidate's data...</h1>
           </div>
         )}
-      </Layout>
+      </Fragment>
     )
   }
 }
