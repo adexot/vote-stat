@@ -8,9 +8,9 @@ import Countdown from 'react-countdown-now'
 const Modal = ({ children, closeModalFn, className }) => {
   return (
     <div className={`modal ${className}`}>
-      <button className="close-modal-btn" onClick={() => closeModalFn()}>
+      {/* <button className="close-modal-btn" onClick={() => closeModalFn()}>
         close
-      </button>
+      </button> */}
       <div className="modal-container">{children}</div>
     </div>
   )
@@ -98,11 +98,10 @@ class IndexPage extends Component {
         <main className="flex-container index-container">
           <Modal
           className={modalVisible ? 'show' : ''}
-          closeModalFn={() => this.closeModal()}
           >
             {
               modalVisible &&
-              <Candidate party={party} />
+              <Candidate party={party} callbackFn={() => this.closeModal()}  />
             }
 
           </Modal>

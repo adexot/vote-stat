@@ -144,12 +144,17 @@
 
     @include mobile {
         display: inline-block;
+        font-size: 0.7rem;
         margin-right: 5px;
     }
 }
 
 .inline-block {
     display: inline-block;
+
+    @include mobile {
+        display: block;
+    }
 }
 
 .candidates{
@@ -180,6 +185,12 @@
 
         .candidate-name {
             margin: 0;
+
+            .surname,
+            .firstname {
+                display: block;
+                line-height: 1.1;
+            }
         }
     }
 }

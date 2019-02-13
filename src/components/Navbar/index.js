@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types'
 import './navbar.scss'
+import Close from '../../images/cancel.svg'
 
 const pages = [
   {
@@ -54,7 +55,7 @@ class Navbar extends Component {
               <img src="https://res.cloudinary.com/adexot/image/upload/c_scale,w_40/v1549125892/Election2019/coat_of_arms.png" className="logo-image" alt="" />
             </div>
             <button className="close-icon" onClick={() => this.toggleMobileNavMenu()}>
-              &times;
+              <Close />
             </button>
           </li>
           {pages.map((navItem, index) => (

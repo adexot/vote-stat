@@ -1,7 +1,8 @@
 import React, { Component, Fragment } from 'react'
-import { Link } from 'gatsby'
 import './candidate.scss'
 import Wiki from 'wikijs'
+import Loading from '../../images/loading.svg'
+import Close from '../../images/close.svg'
 
 const parties = {
   apc: {
@@ -60,7 +61,7 @@ class Candidate extends Component {
 
   render() {
     const { candidate, vice } = this.state
-    const { party } = this.props
+    const { party, callbackFn } = this.props
 
     const partyCandidates = party && parties[party]
     const candidateName = partyCandidates && partyCandidates.president.split(' ')
@@ -70,10 +71,11 @@ class Candidate extends Component {
       <Fragment>
         {candidate ? (
           <main className="flex-container candidate-container">
+            <div className="close-section" onClick={() => callbackFn()}>
+              <Close />
+              <h5>Close</h5>
+            </div>
             <div className="candidate-detail-column scrollable">
-              {/* <Link to="/#candidates-grid" className="close-section">
-                close
-              </Link> */}
               <div className="candidate-party">
                 {partyCandidates.party}
               </div>
@@ -83,13 +85,18 @@ class Candidate extends Component {
                 {candidateName[1]}
               </h1>
               <div>&mdash; PRESIDENTIAL CANDIDATE</div>
-              <div
-                className="candidate-description"
-                dangerouslySetInnerHTML={{ __html: candidate.html }}
-              />
+              {
+                candidate.html ?
+                  <div
+                    className="candidate-description"
+                    dangerouslySetInnerHTML={{ __html: candidate.html }}
+                  /> :
+                  <Loading />
+              }
             </div>
             <div className="candidate-image-column">
-              <img src={candidate.image} className="full-image" />
+              {candidate.image &&
+              <img src={candidate.image} className="full-image" />}
             </div>
             <div className="candidate-vice-column scrollable">
               {vice && (
@@ -103,10 +110,15 @@ class Candidate extends Component {
                     {viceName[1]}
                   </h3>
                   <div>&mdash; VICE-PRESIDENTIAL CANDIDATE</div>
-                  <div
-                    className="vice-description"
-                    dangerouslySetInnerHTML={{ __html: vice.html }}
-                  />
+                  {
+                    vice.html ?
+                      <div
+                        className="vice-description"
+                        dangerouslySetInnerHTML={{ __html: vice.html }}
+                      /> :
+                      <Loading />
+                  }
+
                 </Fragment>
               )}
             </div>
